@@ -1,0 +1,78 @@
+{
+  "name": "eshop-ecommerce-19.-product-details-payment-order-and-review-section",
+  "version": "1.0.0",
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "main": "server.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@emailjs/browser": "^3.10.0",
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@mui/icons-material": "^5.11.0",
+    "@mui/material": "^5.11.2",
+    "@mui/x-data-grid": "^5.17.17",
+    "@reduxjs/toolkit": "^1.9.1",
+    "@stripe/react-stripe-js": "^1.16.1",
+    "@stripe/stripe-js": "^1.46.0",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^14.4.3",
+    "axios": "^1.2.2",
+    "backend": "^0.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "firebase": "^9.15.0",
+    "jwt-decode": "^3.1.2",
+    "moment": "^2.29.4",
+    "node-sass": "^8.0.0",
+    "nodemon": "^2.0.20",
+    "notiflix": "^3.2.5",
+    "react": "^18.2.0",
+    "react-chartjs-2": "^5.1.0",
+    "react-country-region-selector": "^3.6.1",
+    "react-dom": "^18.2.0",
+    "react-icons": "^4.7.1",
+    "react-image-lightbox": "^5.1.4",
+    "react-redux": "^8.0.5",
+    "react-router-dom": "^6.6.1",
+    "react-scripts": "^5.0.1",
+    "react-star-rate": "^0.2.0",
+    "react-toastify": "^9.1.1",
+    "recharts": "^2.2.0",
+    "redux": "^4.2.0",
+    "stripe": "^11.5.0",
+    "tailwind-scrollbar": "^2.1.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "server": "nodemon server.js"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "homepage": "http://localhost:3000/",
+  "devDependencies": {
+    "tailwindcss": "^3.2.4"
+  }
+}

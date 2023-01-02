@@ -1,0 +1,33 @@
+.top{
+    background-image:linear-gradient(rgba(175, 126, 126, 0.6),rgba(0,0,0,0.6)) ,url(../img/3.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 70vh;
+    width: 100%;
+    position: relative;
+}
+.top-text{
+position: absolute;
+top: 40%;
+left: 28%;
+
+}
+.top-text h1{
+    font-size: 5rem;
+    color: white;
+    letter-spacing: 4;
+    font-weight: 600;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+@media(max-width:768px){
+    .top-text h1{
+     font-size: 2.8rem;
+    }
+    .top-text{
+position: absolute;
+top: 40%;
+left: 18%;
+
+}
+}

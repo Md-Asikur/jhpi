@@ -1,0 +1,230 @@
+.middle h1{
+text-align: center;
+font-size: 50px;
+}
+a{
+    text-decoration: none;
+}
+.carousel-item {
+ 
+ 
+ 
+  height: 90vh;
+  text-align: center;
+  min-height: 300px;
+  /* background: no-repeat center center scroll;
+  -webkit-background-size: cover;
+  background-size: cover; */
+  transition: all 0.9s ease;
+  position: relative;
+}
+.carousel-item img {
+  text-align: center;
+  height: 100%;
+  width: 100%;
+}
+.carousel-caption {
+  bottom: 290px;
+  color: white;
+  z-index: 2;
+}
+.carousel-caption h5 {
+  font-size: 45px;
+  letter-spacing: 2px;
+  margin-top: 25px;
+}
+.carousel-inner::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: linear-gradient(to left, rgba(11, 8, 22, 0.63), rgba(5, 13, 20, 0.733));
+  z-index: 1;
+}
+/* .home-main {
+  height: 100vh;
+  width: 100%;
+  background-image: linear-gradient(rgba(5, 80, 179, 0.9), rgba(15, 4, 4, 0.4)),
+    url(../img/banner.jpg);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+.home-main .home-text {
+  position: absolute;
+  top: 40%;
+  left: 15%;
+  color: white;
+  line-height: 1;
+}
+.home-text h1 {
+  font-size: 3.5em;
+  font-weight: 600;
+  font-family: monospace;
+  letter-spacing: 5;
+}
+.home-text h3 {
+  font-size: 1.3em;
+  font-weight: 600;
+  font-family: monospace;
+  letter-spacing: 5;
+}
+.home-btn button {
+  position: absolute;
+  display: block;
+  padding: 10px 50px;
+  top: 50%;
+  left: 15%;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  background-color: transparent;
+  border: 1px solid lightcoral;
+  color: white;
+  font-size: 18px;
+}
+.home-btn button:hover {
+  background-color: crimson;
+  transition: all 0.3s linear;
+} */
+.about-main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  padding: 40px;
+ 
+}
+/* about */
+.section{
+	width: 100%;
+	height: 60vh;
+	background-color: #fff;
+  margin-top: 150px;
+  margin-bottom: 20px;
+ 
+}
+@media(max-width:768px){
+    .carousel-item {
+ 
+ 
+ 
+  height: 10vh;
+  text-align: center;
+  
+ 
+}
+ .section{
+   height:auto;
+ }
+ 
+ 
+
+ }
+.container{
+	width: 80%;
+	display: block;
+	margin:auto;
+  padding-bottom: 100px;
+	
+}
+.content-section{
+	float: left;
+	width: 55%;
+}
+.image-section{
+	float: right;
+	width: 40%;
+}
+.image-section img{
+	width: 100%;
+	height: auto;
+}
+.content-section .title h1{
+	text-transform: capitalize;
+	font-size: 28px;
+ font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+ color:#5d5d5d;
+}
+.content-section .content h3,p{
+	margin-top: 20px;
+	color:#5d5d5d;
+	font-size: 21px;
+}
+.content-section .content p{
+	margin-top: 10px;
+	font-family: sans-serif;
+	font-size: 18px;
+	line-height: 1.5;
+}
+.content-section .content .button{
+	margin-top: 30px;
+}
+.content-section .content .button a{
+	background-color: #3d3d3d;
+	padding:12px 40px;
+	text-decoration: none;
+	color:#fff;
+	font-size: 25px;
+	letter-spacing: 1.5px;
+}
+.content-section .content .button a:hover{
+	background-color: #a52a2a;
+	color:#fff;
+}
+.content-section .social{
+	margin: 40px 40px;
+}
+.content-section .social i{
+	color:#0835b1;
+	font-size: 30px;
+	padding:0px 10px;
+}
+.content-section .social i:hover{
+	color:#3d3d3d;
+}
+@media screen and (max-width: 768px){
+	.container{
+	width: 80%;
+	display: block;
+	margin:auto;
+	padding-top:50px;
+}
+.content-section{
+	float:none;
+	width:100%;
+	display: block;
+	margin:auto;
+}
+.image-section{
+	float:none;
+	width:100%;
+  padding: 20px 10px;
+	
+}
+.image-section img{
+	width: 100%;
+	height: auto;
+	display: block;
+	margin:auto;
+  
+}
+.content-section .title{
+	text-align: center;
+	font-size: 19px;
+}
+.content-section .content .button{
+	text-align: center;
+}
+.content-section .content .button a{
+	padding:9px 30px;
+}
+.content-section .social{
+	text-align: center;
+}
+
+}
