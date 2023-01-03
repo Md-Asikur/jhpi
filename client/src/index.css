@@ -29,7 +29,7 @@
 }
 
 html {
-  font-size: 10px;
+  font-size: 11px;
 }
 
 body {
@@ -429,7 +429,8 @@ a {
   transition: all 0.2s;
 }
 
-a:hover {
+/* a:hover {
   color: var(--color-dark);
-  font-size: 1.5rem;
-}
+  font-size: 2.1rem;
+  transition: all 0.2s;
+} */

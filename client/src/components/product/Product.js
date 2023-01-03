@@ -37,12 +37,11 @@ const Product = () => {
   };
 
   return (
-    <section>
+      <section>
+          <h1 style={{textAlign:"center",fontSize:"4rem",paddingBottom:"20px"}}>Our Students</h1>
       <div className={`container ${styles.product}`}>
         <aside
-          className={
-            showFilter ? `${styles.filter} ${styles.show}` : `${styles.filter}`
-          }
+          className={showFilter ? `${styles.filter} ${styles.show}` : `${styles.filter}`}
         >
           {isLoading ? null : <ProductFilter />}
         </aside>

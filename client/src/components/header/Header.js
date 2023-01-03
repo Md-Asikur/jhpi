@@ -27,8 +27,8 @@ import UserIcons from "../../com_1/components/user/UserIcons";
 const logo = (
   <div className={styles.logo}>
     <Link to="/">
-      <h2>
-        e<span>Shop</span>.
+      <h2 className="text-white">
+        JH<span className="text-orange">PI</span>.
       </h2>
     </Link>
   </div>
@@ -87,7 +87,7 @@ const Header = () => {
       <header className={scrollPage ? `${styles.fixed}` : null}>
         <div className={styles.header}>
           <h1 style={{ color: "white", cursor: "pointer" }} onClick={() => navigate("/")}>
-            JHPI
+            JH<span style={{ color: "coral" }}>PI</span>
           </h1>
 
           <nav className={showMenu ? `${styles["show-nav"]}` : `${styles["hide-nav"]}`}>
@@ -107,9 +107,7 @@ const Header = () => {
               </li>
               <li>
                 {currentUser && currentUser?.role === "admin" ? (
-                  <Link to="/admin/home">
-                    <button className="--btn --btn-primary">Admin</button>
-                  </Link>
+                  <Link to="/admin/home">Admin</Link>
                 ) : (
                   ""
                 )}
@@ -130,7 +128,12 @@ const Header = () => {
               </li>
               <li>
                 <NavLink to="/teachers" className={activeLink}>
-                 Teachers
+                  Teachers
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/Students" className={activeLink}>
+                  Students
                 </NavLink>
               </li>
               <li>
@@ -145,7 +148,7 @@ const Header = () => {
               </li>
               <li>
                 <NavLink to="/principal" className={activeLink}>
-                Principal Info
+                  Principal Info
                 </NavLink>
               </li>
             </ul>

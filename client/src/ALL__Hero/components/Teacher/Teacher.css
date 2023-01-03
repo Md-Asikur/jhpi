@@ -1,0 +1,115 @@
+.row_teacher {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 2em 1em;
+  text-align: center;
+}
+.column_teacher {
+    margin-top: 20px;
+  width: 100%;
+  padding: 0.5em 0;
+}
+.row_teacher h1 {
+  width: 100%;
+  text-align: center;
+  font-size: 5.7em;
+  color: #1f003b;
+  font-weight: 600;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 10px 2px;
+}
+.card_teacher {
+  box-shadow: 0 0 2.4em rgba(25, 0, 58, 0.1);
+  padding: 3.5em 1em;
+  border-radius: 0.6em;
+  color: #1f003b;
+  cursor: pointer;
+  transition: 0.3s;
+  background-color: #ffffff;
+}
+.card_teacher .img-container_teacher {
+  width: 12em;
+  height: 12em;
+  background-color: #a993ff;
+  padding: 0.5em;
+  border-radius: 50%;
+  margin: 0 auto 2em auto;
+}
+.card_teacher img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.card_teacher .img-container_teacher:hover{
+     transform: scale(1.3);
+     transition: 0.3s linear;
+}
+.card_teacher h3 {
+  font-weight: 500;
+  color: #020000;
+}
+.card_teacher:hover {
+  font-weight: 500;
+  /* color: #ffffff; */
+ 
+}
+.card_teacher p {
+  font-weight: 300;
+  text-transform: uppercase;
+  margin: 0.5em 0 2em 0;
+  letter-spacing: 2px;
+}
+.icons {
+  width: 50%;
+  min-width: 180px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+.card_teacher a {
+  text-decoration: none;
+  color: inherit;
+  font-size: 1.4em;
+}
+.card_teacher:hover {
+  background: linear-gradient(#fefeff, #8f067136);
+ 
+}
+.card_teacher:hover .img-container {
+  transform: scale(1.15);
+}
+@media(max-width:767px){
+    .row_teacher h1 {
+ 
+  font-size: 2.7em;
+  color: #07000e;
+ 
+}
+}
+@media screen and (min-width: 768px) {
+    .card_teacher .img-container_teacher {
+  width: 15em;
+  height: 15em;
+  background-color: #a993ff;
+  padding: 0.5em;
+  border-radius: 50%;
+  margin: 0 auto 2em auto;
+}
+
+  section {
+    padding: 1em 7em;
+  }
+}
+@media screen and (min-width: 992px) {
+  section {
+    padding: 1em;
+  }
+  .card_teacher {
+    padding: 5em 1em;
+  }
+  .column_teacher {
+    flex: 0 0 33.33%;
+    max-width: 33.33%;
+    padding: 0 1em;
+  }
+}

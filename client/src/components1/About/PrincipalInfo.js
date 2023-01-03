@@ -7,8 +7,9 @@ import F1 from "../img/3.jpg";
 import C3 from "../img/4.jpg";
 import Fi1 from "../img/1.jpg";
 import Delivery from "./img/delivery.png";
-import HeroBg from "./img/heroBg.png";
-import Footer from "../footer/Footer";
+import HeroBg from "./img/principal.png";
+import Footer from "../../ALL__Hero/components/Footer/Footer";
+
 export default function PrincipalInfo() {
   
   return (
@@ -42,7 +43,7 @@ export default function PrincipalInfo() {
       </div> */}
       <div class="about-sec">
         <div class="about-img">
-          <img src="http://jhenaidahpoly.gov.bd/wp-content/uploads/2020/12/VP-JHPI-1-300x278.jpg" />
+          <img src={HeroBg} />
         </div>
         <div class="about-intro">
           <h3 className="font-bold">

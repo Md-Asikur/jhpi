@@ -1,0 +1,25 @@
+.footer {
+  background: #0a1930;
+  padding: 40px 0px;
+  color: #fff;
+  font-style: 16px;
+}
+
+.follows span a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.follows span {
+  margin-right: 15px;
+}
+
+.link__list .link__item {
+  background: transparent;
+}
+
+.link__list a {
+  text-decoration: none;
+  color: #f6f8f7;
+  font-weight: 500;
+}

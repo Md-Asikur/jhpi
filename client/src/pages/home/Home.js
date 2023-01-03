@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import HomeHero from "../../ALL__Hero/pages/Home";
 import Product from "../../components/product/Product";
 import Slider from "../../components/slider/Slider";
 
@@ -22,7 +23,8 @@ const Home = () => {
   return (
     <div>
       <Slider />
-      <Product />
+      {/* <Product /> */}
+      <HomeHero/>
     </div>
   );
 };

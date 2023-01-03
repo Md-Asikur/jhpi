@@ -2,7 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 // Pages
-import { Home, Contact, Register, Reset, Admin } from "./pages";
+import { Home, Contact, Register, Reset, Admin,TecAdmin,TecHome } from "./pages";
 // Components
 import { Header, Footer } from "./components";
 import AdminOnlyRoute from "./components/adminOnlyRoute/AdminOnlyRoute";
@@ -21,19 +21,33 @@ import Notification from "./com_1/components/Notification";
 import About from "./components1/About/About";
 import PrincipalInfo from "./components1/About/PrincipalInfo";
 import Gallery from "./Gallery/Gallery";
-import { Container } from "@mui/material";
+import Product from "./components/product/Product";
+
+
+import AddTeacher from "./components/admin/addProduct/AddTeacher";
 
 
 function App() {
   return (
     <>
-      <div style={{padding:"0px 5px"}}>
+      <div style={{ padding: "0px 4.3px", }}>
         <BrowserRouter>
           <Notification />
           <ToastContainer />
           <Login />
           <Header />
+
           <Routes>
+            <Route path="/teachers/*" element={<TecHome />} />
+
+            <Route
+              path="/admin/teacher/*"
+              element={
+                <AdminOnlyRoute>
+                  <TecAdmin />
+                </AdminOnlyRoute>
+              }
+            />
             <Route path="/" element={<Home />} />
             <Route path="dashboard/*" element={<Dashboard />} />
             <Route path="/contact" element={<Contact />} />
@@ -56,12 +70,14 @@ function App() {
             <Route path="/order-history" element={<OrderHistory />} />
             <Route path="/order-details/:id" element={<OrderDetails />} />
             <Route path="/review-product/:id" element={<ReviewProducts />} />
-            {/* Me */}
+            {/*  */}
             <Route path="/about" element={<About />} />
             <Route path="/principal" element={<PrincipalInfo />} />
             <Route path="/gallery" element={<Gallery />} />
+            <Route path="/students" element={<Product />} />
+            {/* Teacher Routes */}
           </Routes>
-          {/* <Footer /> */}
+          <Footer />
         </BrowserRouter>
       </div>
     </>

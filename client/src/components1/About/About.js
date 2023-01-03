@@ -8,7 +8,8 @@ import C3 from "../img/4.jpg";
 import Fi1 from "../img/1.jpg";
 import Delivery from "./img/delivery.png";
 import HeroBg from "./img/heroBg.png";
-import Footer from '../footer/Footer';
+import Footer from '../../ALL__Hero/components/Footer/Footer';
+
 export default function About() {
    const heroData = [
      {
