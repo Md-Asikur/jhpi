@@ -39,6 +39,7 @@
     "react-country-region-selector": "^3.6.1",
     "react-countup": "^6.4.0",
     "react-dom": "^18.2.0",
+    "react-helmet": "^6.1.0",
     "react-icons": "^4.7.1",
     "react-image-lightbox": "^5.1.4",
     "react-player": "^2.11.0",

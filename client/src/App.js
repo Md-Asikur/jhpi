@@ -25,12 +25,14 @@ import Product from "./components/product/Product";
 
 
 import AddTeacher from "./components/admin/addProduct/AddTeacher";
-
+import {Helmet} from "react-helmet"
 
 function App() {
   return (
     <>
-      <div style={{ padding: "0px 4.3px", }}>
+      
+      <div style={{ padding: "0px 4.3px" }}>
+        
         <BrowserRouter>
           <Notification />
           <ToastContainer />
