@@ -14,6 +14,10 @@ import Testimonials from "../components/Testimonial/Testimonials";
 import Newsletter from "../components/Newsletter/Newsletter";
 import Footer from "../components/Footer/Footer";
 import Teacher from "../components/Teacher/Teacher";
+import Timer from "../timer--sec/timer";
+import Events from "../EVENTS/Events";
+import Eventsa from "../EVENTS/Events";
+import MultiActionAreaCard from "../EVENTS/Events";
 
 const HomeHero = () => {
   return (
@@ -24,7 +28,9 @@ const HomeHero = () => {
       <AboutUs />
       <Courses />
       <ChooseUs />
-      <Teacher/>
+      <Teacher />
+      <Timer />
+     <MultiActionAreaCard/>
       {/* <Features /> */}
       <FreeCourse />
       <Testimonials />
