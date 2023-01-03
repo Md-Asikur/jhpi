@@ -83,6 +83,9 @@
 }
 
 @media (max-width: 991px){
+    .img-text{
+         transform: translate(0, 124px);
+    }
     .wrapper{
         padding: 0;
     }
@@ -91,5 +94,7 @@
         display: flex;
         flex-direction: column;
     }
-   
+   .services a{
+    margin-bottom: 35px;
+   }
 }
