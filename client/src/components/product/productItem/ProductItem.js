@@ -46,7 +46,7 @@ const ProductItem = ({ product, grid, id, name, price, desc, imageURL,Roll,Deper
           className="--btn --btn-danger"
           onClick={() => navigate(`/product-details/${id}`)}
         >
-          See {name}
+          SEE MORE
         </button>
       </div>
     </Card>

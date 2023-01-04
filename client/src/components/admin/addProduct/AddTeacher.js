@@ -48,16 +48,22 @@ const categories = [
 
 const initialState = {
   name: "",
- 
-  join:"",
- 
+
+  join: "",
+
   Email: "",
   Phone: "",
   imageURL: "",
-  
+
   category: "",
   brand: "",
   desc: "",
+  post: "",
+  tech: "",
+  degree: "",
+  worksAt: "",
+  house: "",
+  studietAt: "",
 };
 
 const AddTeacher = () => {
@@ -135,10 +141,8 @@ const AddTeacher = () => {
       const docRef = addDoc(collection(db, "teachers"), {
         name: teacher.name,
 
-       
         join: teacher.join,
 
-        
         Email: teacher.Email,
         Phone: teacher.Phone,
         imageURL: teacher.imageURL,
@@ -146,7 +150,12 @@ const AddTeacher = () => {
         category: teacher.category,
         brand: teacher.brand,
         desc: teacher.desc,
-
+        post: teacher.post,
+        tech: teacher.tech,
+        degree: teacher.degree,
+        worksAt: teacher.worksAt,
+        house: teacher.house,
+        studietAt: teacher.studietAt,
         createdAt: Timestamp.now().toDate(),
       });
       setIsLoading(false);
@@ -187,17 +196,21 @@ const AddTeacher = () => {
     try {
       setDoc(doc(db, "teachers", id), {
         name: teacher.name,
-       
+
         join: teacher.join,
 
-      
         Phone: teacher.Phone,
         imageURL: teacher.imageURL,
 
         category: teacher.category,
         brand: teacher.brand,
         desc: teacher.desc,
-
+        post: teacher.post,
+        tech: teacher.tech,
+        degree: teacher.degree,
+        worksAt: teacher.worksAt,
+        house: teacher.house,
+        studietAt: teacher.studietAt,
         createdAt: teacherEdit.createdAt,
         editedAt: Timestamp.now().toDate(),
       });
@@ -276,114 +289,6 @@ const AddTeacher = () => {
               )}
             </Card>
 
-            {/* <label>Father's Name:</label>
-            <input
-              type="text"
-              placeholder="father's name"
-              required
-              name="Father_name"
-              value={product.Father_name}
-              onChange={(e) => handleInputChange(e)}
-            />
-            <label>Mother's Name:</label>
-            <input
-              type="text"
-              placeholder="mother's name"
-              required
-              name="Mother_name"
-              value={product.Mother_name}
-              onChange={(e) => handleInputChange(e)}
-            />
-            <label>Date Of Birth:</label>
-            <input
-              type="text"
-              placeholder="birht date"
-              required
-              name="Date_of_birth"
-              value={product.Date_of_birth}
-              onChange={(e) => handleInputChange(e)}
-            />
-            <label>Depertment:</label>
-            <input
-              type="text"
-              placeholder="Depertment"
-              required
-              name="Depertment"
-              value={product.Depertment}
-              onChange={(e) => handleInputChange(e)}
-            />
-            <label>Roll:</label>
-            <input
-              type="number"
-              placeholder="roll"
-              required
-              name="Roll"
-              value={product.Roll}
-              onChange={(e) => handleInputChange(e)}
-            />
-            <label>Registration:</label>
-            <input
-              type="number"
-              placeholder="registration number"
-              required
-              name="Registration"
-              value={product.Registration}
-              onChange={(e) => handleInputChange(e)}
-            />
-            <label>Semester:</label>
-            <input
-              type="text"
-              placeholder="semester"
-              required
-              name="Semester"
-              value={product.Semester}
-              onChange={(e) => handleInputChange(e)}
-            />
-            <label>Shift:</label>
-            <input
-              type="text"
-              placeholder="shift"
-              required
-              name="Shift"
-              value={product.Shift}
-              onChange={(e) => handleInputChange(e)}
-            />
-            <label>Session:</label>
-            <input
-              type="text"
-              placeholder="session"
-              required
-              name="Session"
-              value={product.Session}
-              onChange={(e) => handleInputChange(e)}
-            />
-            <label>Blood Group:</label>
-            <input
-              type="text"
-              placeholder="blood"
-              required
-              name="Blood"
-              value={product.Blood}
-              onChange={(e) => handleInputChange(e)}
-            />
-            <label>Present Address:</label>
-            <input
-              type="text"
-              placeholder="Present Address"
-              required
-              name="PresentAddress"
-              value={product.PresentAddress}
-              onChange={(e) => handleInputChange(e)}
-            />
-            <label>Parmanent Address:</label>
-            <input
-              type="text"
-              placeholder="parmanent address"
-              required
-              name="ParmanentAddress"
-              value={product.ParmanentAddress}
-              onChange={(e) => handleInputChange(e)}
-            /> */}
             <label>Email Address:</label>
             <input
               type="email"
@@ -420,14 +325,50 @@ const AddTeacher = () => {
                 );
               })}
             </select>
-
-            <label>Teacher keyword for search:</label>
+            <label>Technology:</label>
             <input
               type="text"
-              placeholder="Student keyword"
+              placeholder="Technology..."
               required
-              name="brand"
-              value={teacher.brand}
+              name="tech"
+              value={teacher.tech}
+              onChange={(e) => handleInputChange(e)}
+            />
+            <label>POST:</label>
+            <input
+              type="text"
+              placeholder="POST..."
+              required
+              name="post"
+              value={teacher.post}
+              onChange={(e) => handleInputChange(e)}
+            />
+            <label>DEGREE:</label>
+            <input
+              type="text"
+              placeholder="DEGREE..."
+              required
+              name="degree"
+              value={teacher.degree}
+              onChange={(e) => handleInputChange(e)}
+            />
+           
+            <label>HOUSE:</label>
+            <input
+              type="text"
+              placeholder="HOUSE..."
+              required
+              name="house"
+              value={teacher.house}
+              onChange={(e) => handleInputChange(e)}
+            />
+            <label>STUDIET-AT:</label>
+            <input
+              type="text"
+              placeholder="STUDIET-AT..."
+              required
+              name="studietAt"
+              value={teacher.studietAt}
               onChange={(e) => handleInputChange(e)}
             />
 
@@ -440,6 +381,24 @@ const AddTeacher = () => {
               cols="30"
               rows="10"
             ></textarea>
+            <label>Teacher keyword for search:</label>
+            <input
+              type="text"
+              placeholder="Student keyword"
+              required
+              name="brand"
+              value={teacher.brand}
+              onChange={(e) => handleInputChange(e)}
+            />
+            <label>WORKS-AT:</label>
+            <input
+              type="text"
+              placeholder="WORKS-AT..."
+              required
+              name="worksAt"
+              value={teacher.worksAt}
+              onChange={(e) => handleInputChange(e)}
+            />
             <label>Join Year</label>
             <input
               type="text"

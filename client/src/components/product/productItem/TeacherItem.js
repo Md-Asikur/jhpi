@@ -53,7 +53,7 @@ const TeacherItem = ({
           className="--btn --btn-danger"
           onClick={() => navigate(`/teachers-details/${id}`)}
         >
-          See {name}
+          SEE MORE
         </button>
       </div>
     </Card>

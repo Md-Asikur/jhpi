@@ -109,7 +109,7 @@ const TeacherDetails = () => {
                   {" "}
                   <b>Teacher Name </b> :{teacher.name}
                 </h3>
-               
+
                 <h3>
                   {" "}
                   <b>Email </b> :{teacher.Email}
@@ -119,12 +119,31 @@ const TeacherDetails = () => {
                   <b>Phone </b> :{teacher.Phone}
                 </h3>
                 <h3>
+                  <b>TECHNOLOGY </b>: {teacher.tech}
+                </h3>
+                <h3>
+                  <b>POST </b>: {teacher.post}
+                </h3>
+                <h3>
+                  <b>DEGREE </b>: {teacher.degree}
+                </h3>
+                <h3>
+                  <b>STUDIET-AT </b>: {teacher.studietAt}
+                </h3>
+                <h3>
+                  <b>HOUSE </b>: {teacher.house}
+                </h3>
+                <h3>
                   {" "}
                   <b>Description </b> :{teacher.desc}
                 </h3>
                 {/* <p>
                   <b>SKU</b> {teacher.id}
                 </p> */}
+                <h3>
+                  <b>WORKS-AT </b>: {teacher.worksAt}
+                </h3>
+
                 <h3>
                   <b>Tag </b>: {teacher.brand}
                 </h3>
@@ -180,16 +199,9 @@ const TeacherDetails = () => {
                       <br />
                       <span className="text-3xl">{review}</span>
                       <br />
-                      <span className="text-2xl">
-                        <b>Id: {id}</b>
-                      </span>
                       <br />
                       <span className="text-2xl">
-                        <b> Date: {reviewDate}</b>
-                      </span>
-                      <br />
-                      <span className="text-2xl">
-                        <b>By: {name}</b>
+                        <b>Name: {name}</b>
                       </span>
                       <br />
                       <span className="text-2xl">
@@ -201,15 +213,22 @@ const TeacherDetails = () => {
                       </span>
                       <br />
 
+                      <span className="text-2xl">
+                        <b>Date: {reviewDate}</b>
+                      </span>
+
                       <span>
-                        <img src={photoURL} className="w-40 h-30" />
+                        <img src={photoURL} className="w-20 h-20 rounded" />
                       </span>
                       {currentUser?.role === "admin" ? (
-                        <FaTrashAlt
-                          size={22}
-                          color="red"
-                          onClick={() => confirmDelete(id)}
-                        />
+                        <>
+                          <Link
+                            onClick={() => confirmDelete(id)}
+                            style={{ color: "red", textDecoration: "none" }}
+                          >
+                            DELETE REVIEW
+                          </Link>
+                        </>
                       ) : (
                         ""
                       )}

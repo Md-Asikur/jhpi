@@ -96,7 +96,7 @@ console.log(filteredReviews)
       <div className={`container ${styles.product}`}>
         <h2>Student Details</h2>
         <div>
-          <Link to="/#products">&larr; Back To Products</Link>
+          <Link to="/students">&larr; Back To All</Link>
         </div>
         {product === null ? (
           <img src={spinnerImg} alt="Loading" style={{ width: "50px" }} />
@@ -222,16 +222,9 @@ console.log(filteredReviews)
                       <br />
                       <span className="text-3xl">{review}</span>
                       <br />
-                      <span className="text-2xl">
-                        <b>Id: {id}</b>
-                      </span>
                       <br />
                       <span className="text-2xl">
-                        <b> Date: {reviewDate}</b>
-                      </span>
-                      <br />
-                      <span className="text-2xl">
-                        <b>By: {name}</b>
+                        <b>Name: {name}</b>
                       </span>
                       <br />
                       <span className="text-2xl">
@@ -243,15 +236,16 @@ console.log(filteredReviews)
                       </span>
                       <br />
 
+                      <span className="text-2xl">
+                        <b>Date: {reviewDate}</b>
+                      </span>
                       <span>
-                        <img src={photoURL} className="w-40 h-30" />
+                        <img src={photoURL} className="w-20 h-20 rounded" />
                       </span>
                       {currentUser?.role === "admin" ? (
-                        <FaTrashAlt
-                          size={22}
-                          color="red"
-                          onClick={() => confirmDelete(id)}
-                        />
+                        <>
+                          <Link onClick={() => confirmDelete(id)} style={{color:"red",textDecoration:"none"}}>DELETE REVIEW</Link>
+                        </>
                       ) : (
                         ""
                       )}
