@@ -22,6 +22,28 @@ const categories = [
   { id: 3, name: "Computer" },
   { id: 4, name: "Electronics" },
   { id: 5, name: "Environment" },
+  { id: 6, name: "Civil-HEAD" },
+  { id: 7, name: "Electrical-HEAD" },
+  { id: 8, name: "Computer-HEAD" },
+  { id: 9, name: "Electronics-HEAD" },
+  { id: 10, name: "Environment-HEAD" },
+  { id: 11, name: "Civil-TECH" },
+  { id: 12, name: "Electrical-TECH" },
+  { id: 13, name: "Computer-TECH" },
+  { id: 14, name: "Electronics-TECH" },
+  { id: 15, name: "Environment-TECH" },
+  { id: 16, name: "Civil-NON-TECH" },
+  { id: 17, name: "Electrical-NON-TECH" },
+  { id: 18, name: "Computer-NON-TECH" },
+  { id: 19, name: "Electronics-NON-TECH" },
+  { id: 20, name: "Environment-NON-TECH" },
+  { id: 21, name: "Civil-GEST" },
+  { id: 22, name: "Electrical-GEST" },
+  { id: 23, name: "Computer-GEST" },
+  { id: 24, name: "Electronics-GEST" },
+  { id: 25, name: "Environment-GEST" },
+  { id: 26, name: "PRINCIPAL" },
+  { id: 27, name: "SUB-PRINCIPAL" },
 ];
 
 const initialState = {
@@ -79,12 +101,26 @@ const AddTeacher = () => {
         setUploadProgress(progress);
       },
       (error) => {
-        toast.error(error.message);
+        toast.error(error.message, {
+          position: "bottom-center",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+        });
       },
       () => {
         getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
           setTeacher({ ...teacher, imageURL: downloadURL });
-          toast.success("Image uploaded successfully.");
+          toast.success("Image uploaded successfully.", {
+            position: "bottom-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+          });
         });
       }
     );
@@ -117,11 +153,25 @@ const AddTeacher = () => {
       setUploadProgress(0);
       setTeacher({ ...initialState });
 
-      toast.success("Teacher uploaded successfully.");
-      navigate("/admin/all-teachers");
+      toast.success("Teacher uploaded successfully.", {
+        position: "bottom-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+      });
+      navigate("/teacher/all-teachers");
     } catch (error) {
       setIsLoading(false);
-      toast.error(error.message);
+      toast.error(error.message, {
+        position: "bottom-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+      });
     }
   };
 
@@ -152,11 +202,25 @@ const AddTeacher = () => {
         editedAt: Timestamp.now().toDate(),
       });
       setIsLoading(false);
-      toast.success("Teacher Edited Successfully");
-      navigate("/admin/all-teachers");
+      toast.success("Teacher Edited Successfully", {
+        position: "bottom-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+      });
+      navigate("/teacher/all-teachers");
     } catch (error) {
       setIsLoading(false);
-      toast.error(error.message);
+      toast.error(error.message, {
+        position: "bottom-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+      });
     }
   };
 

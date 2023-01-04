@@ -23,9 +23,9 @@ const TecHome = () => {
 
   return (
     <div>
-     
+      
       <TeacherAL />
-    
+      
     </div>
   );
 };

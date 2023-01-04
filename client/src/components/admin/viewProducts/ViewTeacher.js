@@ -55,9 +55,25 @@ const ViewTeachers = () => {
 
       const storageRef = ref(storage, imageURL);
       await deleteObject(storageRef);
-      toast.success("Teacher deleted successfully.");
+      toast.success("Teacher deleted successfully.", {
+        position: "bottom-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+      });
     } catch (error) {
-      toast.error(error.message);
+      toast.error(error.message, {
+        position: "bottom-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+
+        theme: "dark",
+      });
     }
   };
 
@@ -97,7 +113,7 @@ const ViewTeachers = () => {
                       <Link to={`/teachers-details/${id}`}>
                         <FaEye size={18} color="green" />
                       </Link>
-                      <Link to={`/admin/teacher/add-teacher/${id}`}>
+                      <Link to={`/teacher/add-teacher/${id}`}>
                         <FaEdit size={20} color="green" />
                       </Link>
                       &nbsp;

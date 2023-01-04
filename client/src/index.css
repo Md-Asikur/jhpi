@@ -434,4 +434,6 @@ a {
   font-size: 2.1rem;
   transition: all 0.2s;
 } */
- 
+ a{
+  text-decoration: none;
+ }

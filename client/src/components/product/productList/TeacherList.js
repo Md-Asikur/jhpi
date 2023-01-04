@@ -5,13 +5,13 @@ import { FaListAlt } from "react-icons/fa";
 import Search from "../../search/Search";
 import ProductItem from "../productItem/ProductItem";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  FILTER_BY_SEARCH,
-  selectFilteredProducts,
-  SORT_PRODUCTS,
-} from "../../../redux/slice/filterSlice";
+
 import Pagination from "../../pagination/Pagination";
-import { selectFilteredTeachers, SORT_TEACHERS } from "../../../redux/slice/tecSlice";
+import {
+  selectFilteredTeachers,
+  SORT_TEACHERS,
+  FILTER_BY_SEARCH,
+} from "../../../redux/slice/filterSliceTeacher";
 import TeacherItem from "../productItem/TeacherItem";
 import TecPagination from "../../pagination/TecPagination";
 
@@ -28,7 +28,7 @@ const TeacherList = ({ teachers }) => {
   const indexOfLastTeacher = currentPage * teachersPerPage;
   const indexOfFirstTeacher = indexOfLastTeacher - teachersPerPage;
   const currentTeacher = filteredTeachers.slice(indexOfFirstTeacher, indexOfLastTeacher);
-
+console.log(filteredTeachers)
   const dispatch = useDispatch();
 
   useEffect(() => {

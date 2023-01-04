@@ -6,7 +6,8 @@ import cartReducer from "./slice/cartSlice";
 import checkoutReducer from "./slice/checkoutSlice";
 import orderReducer from "./slice/orderSlice";
 import teacherReducer from "./slice/teacherSlice";
-import tecFilterReducer from "./slice/tecSlice";
+import filterSliceReducer from "./slice/filterSliceTeacher";
+
 
 
 const rootReducer = combineReducers({
@@ -17,7 +18,7 @@ const rootReducer = combineReducers({
   checkout: checkoutReducer,
   orders: orderReducer,
   teacher: teacherReducer,
-  filterTec:tecFilterReducer, //
+  filtertec:filterSliceReducer, //
 });
 
 const store = configureStore({

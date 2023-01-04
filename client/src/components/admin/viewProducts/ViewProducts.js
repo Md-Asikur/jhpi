@@ -57,9 +57,23 @@ const ViewProducts = () => {
 
       const storageRef = ref(storage, imageURL);
       await deleteObject(storageRef);
-      toast.success("Product deleted successfully.");
+      toast.success("Product deleted successfully.", {
+        position: "bottom-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+      });
     } catch (error) {
-      toast.error(error.message);
+      toast.error(error.message, {
+        position: "bottom-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+      });
     }
   };
 

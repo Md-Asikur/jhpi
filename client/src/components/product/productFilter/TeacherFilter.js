@@ -1,15 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  FILTER_BY_BRAND,
-  FILTER_BY_CATEGORY,
-  FILTER_BY_PRICE,
-} from "../../../redux/slice/filterSlice";
-import {
-  selectMaxPrice,
-  selectMinPrice,
-  selectProducts,
-} from "../../../redux/slice/productSlice";
+import { FILTER_BY_BRAND,FILTER_BY_CATEGORY,FILTER_BY_PRICE } from "../../../redux/slice/filterSliceTeacher";
+import { selectMinPrice,selectMaxPrice } from "../../../redux/slice/teacherSlice";
+
 import { selectTeachers } from "../../../redux/slice/teacherSlice";
 import styles from "./ProductFilter.module.scss";
 

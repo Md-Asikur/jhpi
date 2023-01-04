@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { selectUserID, selectUserName } from "../../redux/slice/authSlice";
 import { selectProducts } from "../../redux/slice/productSlice";
 import Card from "../card/Card";
@@ -61,14 +61,43 @@ const ReviewProducts = () => {
    
     try {
       addDoc(collection(db, "reviews"), reviewConfig);
-      toast.success("Review submitted successfully");
+      toast.success("Review submitted successfully", {
+        position: "bottom-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+
+        theme: "light",
+      });
       setRate(0);
       setReview("");
     } catch (error) {
-      toast.error(error.message);
+      toast.error(error.message, {
+        position: "bottom-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+
+        theme: "dark",
+      });
     }
   };
-
+const loginMessage = () => {
+ toast.warning("🦄PLESE LOGIN AND CONTINUE!", {
+   position: "bottom-center",
+   autoClose: 5000,
+   hideProgressBar: false,
+   closeOnClick: true,
+   pauseOnHover: true,
+   draggable: true,
+  
+   theme: "dark",
+ });
+};
   return (
     <section>
       <div className={`container ${styles.review}`}>
@@ -80,11 +109,7 @@ const ReviewProducts = () => {
             <p className="text-3xl">
               <b>Student Name:</b> {product.name}
             </p>
-            <img
-              src={product.imageURL}
-              alt={product.name}
-              style={{ width: "100px" }}
-            />
+            <img src={product.imageURL} alt={product.name} style={{ width: "100px" }} />
           </>
         )}
 
@@ -105,9 +130,15 @@ const ReviewProducts = () => {
               cols="30"
               rows="10"
             ></textarea>
-            <button type="submit" className="--btn --btn-primary">
-              Submit Review
-            </button>
+            {currentUser && currentUser ? (
+              <button type="submit" className="--btn --btn-primary">
+                Submit Review
+              </button>
+            ) : (
+              <Link onClick={loginMessage} className="--btn --btn-danger" style={{zIndex:"9999999",textDecoration:"none",hover:"none"}}>
+                PLESE LOGIN AND CONTINUE!
+              </Link>
+            )}
           </form>
         </Card>
       </div>

@@ -34,7 +34,7 @@ const TeacherItem = ({
 
   return (
     <Card cardClass={grid ? `${styles.grid}` : `${styles.list}`}>
-      <Link to={`/teacher-details/${id}`}>
+      <Link to={`/teachers-details/${id}`}>
         <div className={styles.img}>
           <img src={imageURL} alt={name} />
         </div>
@@ -51,7 +51,7 @@ const TeacherItem = ({
 
         <button
           className="--btn --btn-danger"
-          onClick={() => navigate(`/teacher-details/${id}`)}
+          onClick={() => navigate(`/teachers-details/${id}`)}
         >
           See {name}
         </button>

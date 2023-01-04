@@ -35,8 +35,7 @@ const TeacherDetails = () => {
   const {
     state: { currentUser },
   } = useValue();
-  const active = currentUser?.active;
-  console.log(active);
+  
 
   useEffect(() => {
     setTeacher(document);
@@ -67,17 +66,35 @@ const TeacherDetails = () => {
     try {
       await deleteDoc(doc(db, "reviews", id));
 
-      toast.success("Review deleted successfully.");
+      toast.success("Review deleted successfully.", {
+        position: "bottom-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+
+        
+      });
     } catch (error) {
-      toast.error(error.message);
+      toast.error(error.message, {
+        position: "bottom-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+
+       
+      });
     }
   };
   return (
     <section>
       <div className={`container ${styles.product}`}>
-        <h2>Product Details</h2>
+        <h2>Teacher Details</h2>
         <div>
-          <Link to="/#products">&larr; Back To Products</Link>
+          <Link to="/teachers">&larr; Back To All</Link>
         </div>
         {teacher === null ? (
           <img src={spinnerImg} alt="Loading" style={{ width: "50px" }} />

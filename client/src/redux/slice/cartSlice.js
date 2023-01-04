@@ -25,7 +25,7 @@ const cartSlice = createSlice({
         // Increase the cartQuantity
         state.cartItems[productIndex].cartQuantity += 1;
         toast.info(`${action.payload.name} increased by one`, {
-          position: "top-left",
+          position: "top-center",
         });
       } else {
         // Item doesn't exists in the cart
@@ -33,7 +33,7 @@ const cartSlice = createSlice({
         const tempProduct = { ...action.payload, cartQuantity: 1 };
         state.cartItems.push(tempProduct);
         toast.success(`${action.payload.name} added to cart`, {
-          position: "top-left",
+          position: "top-center",
         });
       }
       // save cart to LS
@@ -48,7 +48,7 @@ const cartSlice = createSlice({
       if (state.cartItems[productIndex].cartQuantity > 1) {
         state.cartItems[productIndex].cartQuantity -= 1;
         toast.info(`${action.payload.name} decreased by one`, {
-          position: "top-left",
+          position: "top-center",
         });
       } else if (state.cartItems[productIndex].cartQuantity === 1) {
         const newCartItem = state.cartItems.filter(
@@ -56,7 +56,7 @@ const cartSlice = createSlice({
         );
         state.cartItems = newCartItem;
         toast.success(`${action.payload.name} removed from cart`, {
-          position: "top-left",
+          position: "top-center",
         });
       }
       localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
@@ -68,7 +68,7 @@ const cartSlice = createSlice({
 
       state.cartItems = newCartItem;
       toast.success(`${action.payload.name} removed from cart`, {
-        position: "top-left",
+        position: "top-center",
       });
 
       localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
@@ -76,7 +76,7 @@ const cartSlice = createSlice({
     CLEAR_CART(state, action) {
       state.cartItems = [];
       toast.info(`Cart cleared`, {
-        position: "top-left",
+        position: "top-center",
       });
 
       localStorage.setItem("cartItems", JSON.stringify(state.cartItems));

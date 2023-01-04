@@ -1,5 +1,6 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
+import AddProduct from "../../components/admin/addProduct/AddProduct";
 
 import AddTeacher from "../../components/admin/addProduct/AddTeacher";
 
@@ -19,8 +20,8 @@ const TecAdmin = () => {
       <div className={styles.content}>
         <Routes>
           <Route path="home" element={<Home />} />
-          <Route path="teacher/all-teachers" element={<ViewTeachers />} />
-          <Route path="teacher/add-teacher/:id" element={<AddTeacher />} />
+          <Route path="all-teachers" element={<ViewTeachers />} />
+          <Route path="add-teacher/:id" element={<AddTeacher />} />
           <Route path="orders" element={<Orders />} />
         </Routes>
       </div>

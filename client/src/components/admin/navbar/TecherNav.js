@@ -31,22 +31,22 @@ const TeacherNavbar = () => {
       <nav>
         <ul>
           <li>
-            <NavLink to="/admin/teacher/home" className={activeLink}>
+            <NavLink to="/teacher/home" className={activeLink}>
               Home
             </NavLink>
           </li>
           <li>
-            <NavLink to="/admin/teacher/all-teachers" className={activeLink}>
+            <NavLink to="/teacher/all-teachers" className={activeLink}>
               All Teacher
             </NavLink>
           </li>
           <li>
-            <NavLink to="/admin/teacher-add/ADD" className={activeLink}>
+            <NavLink to="/teacher/add-teacher/ADD" className={activeLink}>
               Add Teacher
             </NavLink>
           </li>
           <li>
-            <NavLink to="/admin/teacher/orders" className={activeLink}>
+            <NavLink to="/teacher/orders" className={activeLink}>
               Orders
             </NavLink>
           </li>

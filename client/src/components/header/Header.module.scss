@@ -4,8 +4,8 @@
   top: 0;
   left: 0;
   transition: all 0.5s;
-  z-index: 9999999;
-    width: 100%;
+   z-index: 99999;
+   
 }
 .head{
   position: relative;
@@ -16,7 +16,7 @@ header {
   width: 100%;
   background-color: var(--dark-blue);
   color: #fff;
-   z-index: 9999999;
+   z-index: 99999;
 
   .header {
     width: 100%;

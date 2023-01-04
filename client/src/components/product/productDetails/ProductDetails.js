@@ -68,15 +68,33 @@ console.log(filteredReviews)
      await deleteDoc(doc(db, "reviews", id));
 
   
-     toast.success("Review deleted successfully.");
+     toast.success("Review deleted successfully.", {
+       position: "bottom-center",
+       autoClose: 5000,
+       hideProgressBar: false,
+       closeOnClick: true,
+       pauseOnHover: true,
+       draggable: true,
+
+       theme: "dark",
+     });
    } catch (error) {
-     toast.error(error.message);
+     toast.error(error.message, {
+       position: "bottom-center",
+       autoClose: 5000,
+       hideProgressBar: false,
+       closeOnClick: true,
+       pauseOnHover: true,
+       draggable: true,
+
+       theme: "light",
+     });
    }
  };
   return (
     <section>
       <div className={`container ${styles.product}`}>
-        <h2>Product Details</h2>
+        <h2>Student Details</h2>
         <div>
           <Link to="/#products">&larr; Back To Products</Link>
         </div>

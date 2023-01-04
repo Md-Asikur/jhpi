@@ -90,12 +90,26 @@ const AddProduct = () => {
         setUploadProgress(progress);
       },
       (error) => {
-        toast.error(error.message);
+        toast.error(error.message, {
+          position: "bottom-center",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+        });
       },
       () => {
         getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
           setProduct({ ...product, imageURL: downloadURL });
-          toast.success("Image uploaded successfully.");
+          toast.success("Image uploaded successfully.", {
+            position: "bottom-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+          });
         });
       }
     );
@@ -138,11 +152,25 @@ const AddProduct = () => {
       setUploadProgress(0);
       setProduct({ ...initialState });
 
-      toast.success("Product uploaded successfully.");
+      toast.success("Product uploaded successfully.", {
+        position: "bottom-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+      });
       navigate("/admin/all-products");
     } catch (error) {
       setIsLoading(false);
-      toast.error(error.message);
+      toast.error(error.message, {
+        position: "bottom-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+      });
     }
   };
 
@@ -184,11 +212,25 @@ const AddProduct = () => {
         editedAt: Timestamp.now().toDate(),
       });
       setIsLoading(false);
-      toast.success("Product Edited Successfully");
+      toast.success("Product Edited Successfully", {
+        position: "bottom-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+      });
       navigate("/admin/all-products");
     } catch (error) {
       setIsLoading(false);
-      toast.error(error.message);
+      toast.error(error.message, {
+        position: "bottom-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+      });
     }
   };
 

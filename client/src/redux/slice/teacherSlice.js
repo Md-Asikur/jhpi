@@ -11,7 +11,7 @@ const teacherSlice = createSlice({
   initialState,
   reducers: {
     STORE_TEACHERS(state, action) {
-      //   console.log(action.payload);
+         console.log(action.payload);
       state.teachers = action.payload.teachers;
     },
     GET_PRICE_RANGE(state, action) {
