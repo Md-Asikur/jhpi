@@ -238,13 +238,13 @@ const AddProduct = () => {
     <>
       {isLoading && <Loader />}
       <div className={styles.product}>
-        <h2>{detectForm(id, "Add New Product", "Edit Product")}</h2>
+        <h2>{detectForm(id, "Add New Student", "Edit Student")}</h2>
         <Card cardClass={styles.card}>
           <form onSubmit={detectForm(id, addProduct, editProduct)}>
             <label>Student Name:</label>
             <input
               type="text"
-              placeholder="Product name"
+              placeholder="Student name"
               required
               name="name"
               value={product.name}
@@ -269,7 +269,7 @@ const AddProduct = () => {
               <input
                 type="file"
                 accept="image/*"
-                placeholder="Product Image"
+                placeholder="Student Image"
                 name="image"
                 onChange={(e) => handleImageChange(e)}
               />

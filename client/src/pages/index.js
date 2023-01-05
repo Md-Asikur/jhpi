@@ -6,4 +6,6 @@ export { default as Reset } from "./auth/Reset";
 export { default as Admin } from "./admin/Admin";
 export { default as TecAdmin } from "./admin/TecAdmin";
 export { default as TecHome } from "./admin/TecAdmin";
+export { default as NoticeAdmin } from "./admin/NotAdmin";
+export { default as NoticeHome } from "./admin/NotAdmin";
 

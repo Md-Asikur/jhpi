@@ -12,17 +12,17 @@ import { toast } from "react-toastify";
 import useFetchDocument from "../../customHooks/useFetchDocument";
 import spinnerImg from "../../assets/spinner.jpg";
 import { useValue } from "../../context/ContextProvider";
-import { selectTeachers } from "../../redux/slice/teacherSlice";
+import { selectNotices } from "../../redux/slice/noticeSlice";
 
-const ReviewTeachers = () => {
+const ReviewNotices = () => {
   const [rate, setRate] = useState(0);
   const [review, setReview] = useState("");
-  const [teacher, setTeacher] = useState(null);
+  const [notice, setNotice] = useState(null);
   const { id } = useParams();
-  const { document } = useFetchDocument("teachers", id);
-  const teachers = useSelector(selectTeachers);
+  const { document } = useFetchDocument("notices", id);
+  const notices = useSelector(selectNotices);
   const userID = useSelector(selectUserID);
-  const userName = useSelector(selectUserName);
+  
   const {
     dispatch,
     state: { currentUser },
@@ -34,7 +34,7 @@ const ReviewTeachers = () => {
   const email = currentUser?.email;
   const role = currentUser?.role;
   useEffect(() => {
-    setTeacher(document);
+    setNotice(document);
   }, [document]);
 
   const submitReview = (e) => {
@@ -50,7 +50,7 @@ const ReviewTeachers = () => {
       photoURL,
       active,
       role,
-      teacherID: id,
+      noticeID: id,
       rate,
       review,
       reviewDate: date,
@@ -92,23 +92,23 @@ const ReviewTeachers = () => {
       closeOnClick: true,
       pauseOnHover: true,
       draggable: true,
-  
+
       theme: "dark",
     });
-  }
+  };
 
   return (
     <section>
       <div className={`container ${styles.review}`}>
-        <h2>Review Teacher</h2>
-        {teacher === null ? (
+        <h2>Review Notice</h2>
+        {notice === null ? (
           <img src={spinnerImg} alt="Loading..." style={{ width: "50px" }} />
         ) : (
           <>
             <p className="text-3xl">
-              <b>Teacher Name:</b> {teacher.name}
+              <b>Notice Name:</b> {notice.name}
             </p>
-            <img src={teacher.imageURL} alt={teacher.name} style={{ width: "100px" }} />
+            <img src={notice.imageURL} alt={notice.name} style={{ width: "100px" }} />
           </>
         )}
 
@@ -137,8 +137,8 @@ const ReviewTeachers = () => {
               <Link
                 onClick={loginMessage}
                 className="--btn --btn-danger"
-                  style={{ zIndex: "9999999", textDecoration: "none", hover: "none" }}
-                  disabled
+                style={{ zIndex: "9999999", textDecoration: "none", hover: "none" }}
+                disabled
               >
                 PLESE LOGIN AND CONTINUE!
               </Link>
@@ -150,4 +150,4 @@ const ReviewTeachers = () => {
   );
 };
 
-export default ReviewTeachers;
+export default ReviewNotices;

@@ -14,28 +14,28 @@ export default function About() {
    const heroData = [
      {
        id: 1,
-       name: "Icecream",
+       name: "EVENTS",
        decp: "Chocolate & vanilla",
        price: "5.25",
        imageSrc: I1,
      },
      {
        id: 2,
-       name: "Strawberries",
+       name: "TEACHERS",
        decp: "Fresh Strawberries",
        price: "10.25",
        imageSrc: F1,
      },
      {
        id: 3,
-       name: "Chicken Kebab",
+       name: "PROJECTS",
        decp: "Mixed Kebab Plate",
        price: "8.25",
        imageSrc: C3,
      },
      {
        id: 4,
-       name: "Fish Kebab",
+       name: "STUDENTS",
        decp: "Mixed Fish Kebab",
        price: "5.25",
        imageSrc: Fi1,
@@ -78,7 +78,7 @@ export default function About() {
           </button>
         </div>
         <div className="py-2 flex-1 flex items-center relative pb-8">
-          <div className="w-full h-full absolute top-0 left-0 flex items-center justify-center lg:px-32  py-4 gap-4 flex-wrap">
+          <div className="w-full h-full absolute top-0 left-0 flex items-center justify-center lg:px-32  py-4 gap-2 flex-wrap">
             {heroData &&
               heroData.map((n) => (
                 <div

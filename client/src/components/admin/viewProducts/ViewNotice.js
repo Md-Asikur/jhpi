@@ -11,30 +11,30 @@ import Notiflix from "notiflix";
 import { useDispatch, useSelector } from "react-redux";
 
 import useFetchCollection from "../../../customHooks/useFetchCollection";
-import { selectTeachers, STORE_TEACHERS } from "../../../redux/slice/teacherSlice";
+import { selectNotices, STORE_NOTICES } from "../../../redux/slice/noticeSlice";
 
-const ViewTeachers = () => {
-  const { data, isLoading } = useFetchCollection("teachers");
-  const teachers = useSelector(selectTeachers);
+const ViewNotices = () => {
+  const { data, isLoading } = useFetchCollection("notices");
+  const notices = useSelector(selectNotices);
 
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(
-      STORE_TEACHERS({
-       teachers: data,
+      STORE_NOTICES({
+        notices: data,
       })
     );
   }, [dispatch, data]);
 
   const confirmDelete = (id, imageURL) => {
     Notiflix.Confirm.show(
-      "Delete Teacher!!!",
-      "You are about to delete this Teacher",
+      "Delete Notice!!!",
+      "You are about to delete thisNotice",
       "Delete",
       "Cancel",
       function okCb() {
-        deleteTeacher(id, imageURL);
+        deleteNotice(id, imageURL);
       },
       function cancelCb() {
         console.log("Delete Canceled");
@@ -49,13 +49,13 @@ const ViewTeachers = () => {
     );
   };
 
-  const deleteTeacher = async (id, imageURL) => {
+  const deleteNotice = async (id, imageURL) => {
     try {
-      await deleteDoc(doc(db, "teachers", id));
+      await deleteDoc(doc(db, "notices", id));
 
       const storageRef = ref(storage, imageURL);
       await deleteObject(storageRef);
-      toast.success("Teacher deleted successfully.", {
+      toast.success("Notice deleted successfully.", {
         position: "bottom-center",
         autoClose: 5000,
         hideProgressBar: false,
@@ -81,10 +81,10 @@ const ViewTeachers = () => {
     <>
       {isLoading && <Loader />}
       <div className={styles.table}>
-        <h2>All Teachers</h2>
+        <h2>All Notices</h2>
 
-        {teachers.length === 0 ? (
-          <p>No Teacher found.</p>
+        {notices.length === 0 ? (
+          <p>No Notice found.</p>
         ) : (
           <table>
             <thead>
@@ -93,13 +93,13 @@ const ViewTeachers = () => {
                 <th>Image</th>
                 <th>Name</th>
                 <th>Category</th>
-                
+               
                 <th>Actions</th>
               </tr>
             </thead>
             <tbody>
-              {teachers.map((teacher, index) => {
-                const { id, name, imageURL, category } = teacher;
+              {notices.map((notice, index) => {
+                const { id, name, imageURL, category } = notice;
                 return (
                   <tr key={id}>
                     <td>{index + 1}</td>
@@ -108,12 +108,12 @@ const ViewTeachers = () => {
                     </td>
                     <td>{name}</td>
                     <td>{category}</td>
-                    
+
                     <td className={styles.icons}>
-                      <Link to={`/teachers-details/${id}`}>
+                      <Link to={`/notices-details/${id}`}>
                         <FaEye size={18} color="green" />
                       </Link>
-                      <Link to={`/teacher/add-teacher/${id}`}>
+                      <Link to={`/notice/add-notice/${id}`}>
                         <FaEdit size={20} color="green" />
                       </Link>
                       &nbsp;
@@ -134,4 +134,4 @@ const ViewTeachers = () => {
   );
 };
 
-export default ViewTeachers;
+export default ViewNotices;

@@ -2,7 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 // Pages
-import { Home, Contact, Register, Reset, Admin,TecAdmin,TecHome } from "./pages";
+import { Home, Contact, Register, Reset, Admin,TecAdmin,TecHome,NoticeAdmin } from "./pages";
 // Components
 import { Header, Footer } from "./components";
 import AdminOnlyRoute from "./components/adminOnlyRoute/AdminOnlyRoute";
@@ -27,12 +27,15 @@ import Product from "./components/product/Product";
 import AddTeacher from "./components/admin/addProduct/AddTeacher";
 import {Helmet} from "react-helmet"
 import TeacherAL from "./components/product/TeacherAL";
+import NoticeAL from "./components/product/NoticeAL";
 import TeacherDetails from "./components/product/productDetails/TeacherDetails";
+import NoticeDetails from "./components/product/productDetails/NoticeDetails";
+
 
 function App() {
   return (
     <>
-      <div style={{ padding: "0px 4.3px" }}>
+      <div style={{ padding: "0px 4px" }}>
         <BrowserRouter>
           <Notification />
           <ToastContainer />
@@ -41,6 +44,7 @@ function App() {
 
           <Routes>
             <Route path="/teachers" element={<TeacherAL />} />
+            <Route path="/notices" element={<NoticeAL />} />
 
             <Route path="/" element={<Home />} />
             <Route path="dashboard/*" element={<Dashboard />} />
@@ -65,8 +69,17 @@ function App() {
                 </AdminOnlyRoute>
               }
             />
+            <Route
+              path="/notice/*"
+              element={
+                <AdminOnlyRoute>
+                  <NoticeAdmin />
+                </AdminOnlyRoute>
+              }
+            />
             <Route path="/product-details/:id" element={<ProductDetails />} />
             <Route path="/teachers-details/:id" element={<TeacherDetails />} />
+            <Route path="/notices-details/:id" element={<NoticeDetails/>} />
             <Route path="/cart" element={<Cart />} />
             <Route path="/checkout-details" element={<CheckoutDetails />} />
             <Route path="/checkout" element={<Checkout />} />
@@ -79,7 +92,6 @@ function App() {
             <Route path="/principal" element={<PrincipalInfo />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/students" element={<Product />} />
-            
 
             {/* Teacher Routes */}
           </Routes>

@@ -1,8 +1,8 @@
 .navbar {
   border-right: 1px solid #ccc;
-  min-height: 100%;
+ 
   background-color: #fff;
-  min-width: 100px;
+ 
   z-index: 100;
   
   .user {
@@ -10,7 +10,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 4rem;
+    padding:4rem;
     background-color: var(--light-blue);
 
     h4 {
@@ -43,4 +43,40 @@
   width: 4px;
   height: 100%;
   background-color: orangered;
+}
+@media(max-width:768px){
+ .navbar {
+  border-right: 1px solid #ccc;
+  
+  background-color: #fff;
+ 
+  z-index: 100;
+  
+  .user {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 1rem 2rem;
+    background-color: var(--light-blue);
+
+    h4 {
+      color: #fff;
+    }
+  }
+
+  nav ul {
+    li {
+      border-bottom: 1px solid #ccc;
+      padding: 0px;
+    
+      position: relative;
+      a {
+        font-size: 12px;
+        display: block;
+        width: 100%;
+      }
+    }
+  }
+}
 }

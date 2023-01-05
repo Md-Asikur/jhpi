@@ -1,37 +1,43 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import useFetchCollection from "../../customHooks/useFetchCollection";
-import {
-  GET_PRICE_RANGE,
-  selectProducts,
-  STORE_PRODUCTS,
-} from "../../redux/slice/productSlice";
+
 import styles from "./Product.module.scss";
 import ProductFilter from "./productFilter/ProductFilter";
 import ProductList from "./productList/ProductList";
 import spinnerImg from "../../assets/spinner.jpg";
 import { FaCogs } from "react-icons/fa";
+import {
+ 
+  STORE_TEACHERS,
+  GET_PRICE_RANGE,
+  STORE_NOTICES,
+  selectNotices,
+} from "../../redux/slice/noticeSlice";
+
 import { Link } from "react-router-dom";
 import { useValue } from "../../context/ContextProvider";
+import NoticeList from "./productList/NoticeList";
+import NoticeFilter from "./productFilter/NoticeFilter";
 
-const Product = () => {
-  const { data, isLoading } = useFetchCollection("products");
+const NoticeAL = () => {
+  const { data, isLoading } = useFetchCollection("notices");
   const [showFilter, setShowFilter] = useState(false);
-  const products = useSelector(selectProducts);
+  const notices = useSelector(selectNotices);
   const dispatch = useDispatch();
-const {
-  state: { currentUser },
-} = useValue();
+  const {
+    state: { currentUser },
+  } = useValue();
   useEffect(() => {
     dispatch(
-      STORE_PRODUCTS({
-        products: data,
+      STORE_NOTICES({
+        notices: data,
       })
     );
 
     dispatch(
       GET_PRICE_RANGE({
-        products: data,
+        notices: data,
       })
     );
   }, [dispatch, data]);
@@ -43,26 +49,26 @@ const {
   return (
     <section>
       <h1 style={{ textAlign: "center", fontSize: "4rem", paddingBottom: "20px" }}>
-        Our Students
+        OUR NOTICES{" "}
       </h1>
       {currentUser && currentUser?.role === "admin" ? (
         <h1 style={{ textAlign: "center", fontSize: "2.2rem", padding: "10px 10px" }}>
           <Link
-            to="/admin/add-student/ADD"
+            to="/notice/add-notice/ADD"
             style={{ textAlign: "center", fontSize: "2.2rem" }}
           >
-            Add New Student
-
+            Add New NOTICE
           </Link>
         </h1>
       ) : (
         ""
       )}
+
       <div className={`container ${styles.product}`}>
         <aside
           className={showFilter ? `${styles.filter} ${styles.show}` : `${styles.filter}`}
         >
-          {isLoading ? null : <ProductFilter />}
+          {isLoading ? null : <NoticeFilter />}
         </aside>
         <div className={styles.content}>
           {isLoading ? (
@@ -73,7 +79,7 @@ const {
               className="--center-all"
             />
           ) : (
-            <ProductList products={products} />
+            <NoticeList notices={notices} />
           )}
           <div className={styles.icon} onClick={toggleFilter}>
             <FaCogs size={20} color="orangered" />
@@ -87,4 +93,4 @@ const {
   );
 };
 
-export default Product;
+export default NoticeAL;
