@@ -39,10 +39,10 @@ const NoticeItem = ({
       <div className={styles.content}>
         <div className={styles.details}>
           {/* <p>{`$${price}`}</p> */}
-          <p>{name}</p>
+          {/* <p>{name}</p> */}
           <h4>{shortenText(name, 18)}</h4>
         </div>
-        {!grid && <p className={styles.desc}>{shortenText(desc, 200)}</p>}
+        {!grid && <p className={styles.desc}>{shortenText(desc, 100)}</p>}
 
         <button
           className="--btn --btn-danger"

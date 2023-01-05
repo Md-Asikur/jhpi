@@ -1,8 +1,8 @@
 .grid {
-  width: 25rem;
+  width: 30rem;
   // background-color: #fff;
   margin: 5px;
-  height: 450px;
+  height: 440px;
   position: relative;
   .img {
     padding: 0.2rem;
@@ -20,7 +20,7 @@
     }
   }
   .content {
-   padding-top: 0.2rem;
+    padding-top: 0.2rem;
     background-color: #fff;
     text-align: center;
     position: absolute;
@@ -40,7 +40,11 @@
       p {
         font-weight: 500;
         color: orangered;
+        @media(max-width:768px){
+         display: none;
+        }
       }
+      
     }
     button {
       display: block;
@@ -58,7 +62,7 @@
   margin: 1rem 0;
   .img {
     padding: 1rem;
-    width: 100%;
+    width: 300px;
     // max-width: 35%;
     height: 100%;
     overflow: hidden;
@@ -91,6 +95,20 @@
     button {
       position: absolute;
       
+    }
+  }
+}
+@media(max-width:768px){
+  .grid{
+     width: 25rem;
+  // background-color: #fff;
+  margin: 5px;
+  height: 400px;
+  position: relative;
+  }
+  .list{
+    .img{
+      width: 150px;
     }
   }
 }
