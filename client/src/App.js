@@ -30,6 +30,8 @@ import TeacherAL from "./components/product/TeacherAL";
 import NoticeAL from "./components/product/NoticeAL";
 import TeacherDetails from "./components/product/productDetails/TeacherDetails";
 import NoticeDetails from "./components/product/productDetails/NoticeDetails";
+import Loading from "./com_1/components/Loading";
+
 
 
 function App() {
@@ -37,6 +39,7 @@ function App() {
     <>
       <div style={{ padding: "0px 4px" }}>
         <BrowserRouter>
+          <Loading/>
           <Notification />
           <ToastContainer />
           <Login />

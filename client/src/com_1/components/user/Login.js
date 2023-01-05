@@ -34,6 +34,10 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    dispatch({ type: "START_LOADING" })
+    setTimeout(() => {
+       dispatch({ type: "END_LOADING" });
+    },15000);
     const email = emailRef.current.value;
     const password = passwordRef.current.value;
     if (!isRegister) return login({ email, password }, dispatch);
