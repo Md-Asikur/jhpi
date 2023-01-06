@@ -8,4 +8,8 @@ export { default as TecAdmin } from "./admin/TecAdmin";
 export { default as TecHome } from "./admin/TecAdmin";
 export { default as NoticeAdmin } from "./admin/NotAdmin";
 export { default as NoticeHome } from "./admin/NotAdmin";
+export { default as EnterAdmin } from "./admin/EntAdmin";
+export { default as EntHome } from "./admin/EntAdmin";
+export { default as ProjAdmin } from "./admin/ProjAdmin";
+export { default as ProjHome } from "./admin/ProjAdmin";
 

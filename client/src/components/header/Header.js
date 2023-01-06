@@ -135,31 +135,44 @@ const Header = () => {
                 </NavLink>
               </li>
               <li>
+                <NavLink to="/projects" className={activeLink}>
+                  Projects
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/entertainments" className={activeLink}>
+                  Entertainments
+                </NavLink>
+              </li>
+              <li>
                 <NavLink to="/gallery" className={activeLink}>
                   Gallery
                 </NavLink>
               </li>
+
               <li>
                 <NavLink to="/principal" className={activeLink}>
                   Principal Info
                 </NavLink>
               </li>
+              <li>
+                {!currentUser ? (
+                  <a
+                    color="inherit"
+                    startIcon={<Lock />}
+                    onClick={() => dispatch({ type: "OPEN_LOGIN" })}
+                  >
+                    Login
+                  </a>
+                ) : (
+                  <UserIcons />
+                )}
+              </li>
             </ul>
+
             <div className={styles["header-right"]} onClick={hideMenu}>
               <span className={styles.links}>
-                <ShowOnLogout>
-                  {!currentUser ? (
-                    <a
-                      color="inherit"
-                      startIcon={<Lock />}
-                      onClick={() => dispatch({ type: "OPEN_LOGIN" })}
-                    >
-                      Login
-                    </a>
-                  ) : (
-                    <UserIcons />
-                  )}
-                </ShowOnLogout>
+                <ShowOnLogout></ShowOnLogout>
                 <ShowOnLogin>
                   <a href="#home" style={{ color: "#ff7722" }}>
                     <FaUserCircle size={16} />

@@ -116,7 +116,7 @@ header {
     display: none;
   }
 
-  @media screen and (max-width: 1150px) {
+  @media screen and (max-width: 1450px) {
     .fixed{
        padding:0.4rem;
     }
@@ -163,7 +163,7 @@ header {
           border-bottom: 1px solid #333;
           a {
             display: block;
-            font-size: 1.3rem;
+            font-size: 2rem;
            
           }
         }
@@ -194,6 +194,7 @@ header {
             margin: 0;
             padding: 5px 0;
             border-bottom: 1px solid #333;
+            
           }
         }
       }
