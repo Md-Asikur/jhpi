@@ -20,7 +20,12 @@ const TeacherNavbar = () => {
       <div className={styles.user}>
         <Avatar
           src={currentUser?.photoURL}
-          style={{ width: "40px", height: "40px", backgroundPosition: "center" }}
+          style={{
+            width: "40px",
+            height: "40px",
+            backgroundPosition: "center",
+            borderRadius: "50%",
+          }}
           alt={currentUser?.name}
         >
           {currentUser?.name?.charAt(0).toUpperCase()}
@@ -30,7 +35,6 @@ const TeacherNavbar = () => {
       </div>
       <nav>
         <ul>
-          
           <li>
             <NavLink to="/teacher/all-teachers" className={activeLink}>
               All Teacher
@@ -41,7 +45,6 @@ const TeacherNavbar = () => {
               Add Teacher
             </NavLink>
           </li>
-          
         </ul>
       </nav>
     </div>

@@ -93,13 +93,14 @@ const ViewTeachers = () => {
                 <th>Image</th>
                 <th>Name</th>
                 <th>Category</th>
-                
+                <th>Creator</th>
+                <th>Creator_Name</th>
                 <th>Actions</th>
               </tr>
             </thead>
             <tbody>
               {teachers.map((teacher, index) => {
-                const { id, name, imageURL, category } = teacher;
+                const { id, name, imageURL, category, cretor, cretorName } = teacher;
                 return (
                   <tr key={id}>
                     <td>{index + 1}</td>
@@ -108,7 +109,10 @@ const ViewTeachers = () => {
                     </td>
                     <td>{name}</td>
                     <td>{category}</td>
-                    
+                    <td>
+                      <img src={cretor} alt={cretorName} style={{ width: "60px" }} />
+                    </td>
+                    <td>{cretorName}</td>
                     <td className={styles.icons}>
                       <Link to={`/teachers-details/${id}`}>
                         <FaEye size={18} color="green" />

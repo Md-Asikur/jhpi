@@ -10,14 +10,14 @@ const AdminOnlyRoute = ({ children }) => {
   } = useValue();
   const userEmail = useSelector(selectEmail);
 
-  if (currentUser?.role === "admin") {
+  if (currentUser?.role === "admin" || currentUser) {
     return children;
   }
   return (
     <section style={{ height: "80vh" }}>
       <div className="container">
         <h2>Permission Denied.</h2>
-        <p>This page can only be view by an Admin user.</p>
+        <p>This page can only be view by an Admin user or Login User.</p>
         <br />
         <Link to="/">
           <button className="--btn">&larr; Back To Home</button>

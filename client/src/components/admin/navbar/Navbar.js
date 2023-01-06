@@ -20,7 +20,12 @@ const Navbar = () => {
       <div className={styles.user}>
         <Avatar
           src={currentUser?.photoURL}
-          style={{ width: "40px", height: "40px", backgroundPosition: "center" }}
+          style={{
+            width: "40px",
+            height: "40px",
+            backgroundPosition: "center",
+            borderRadius: "50%",
+          }}
           alt={currentUser?.name}
         >
           {currentUser?.name?.charAt(0).toUpperCase()}

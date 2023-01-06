@@ -13,6 +13,7 @@ import spinnerImg from "../../assets/spinner.jpg";
 import { FaCogs } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { useValue } from "../../context/ContextProvider";
+import { toast } from "react-toastify";
 
 const Product = () => {
   const { data, isLoading } = useFetchCollection("products");
@@ -39,24 +40,46 @@ const {
   const toggleFilter = () => {
     setShowFilter(!showFilter);
   };
+const loginMessage = () => {
+  toast.warning("🦄PLESE LOGIN AND CONTINUE!", {
+    position: "bottom-center",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
 
+    theme: "dark",
+  });
+};
   return (
     <section>
       <h1 style={{ textAlign: "center", fontSize: "4rem", paddingBottom: "20px" }}>
         Our Students
       </h1>
-      {currentUser && currentUser?.role === "admin" ? (
+      {(currentUser && currentUser?.role === "admin") || currentUser ? (
         <h1 style={{ textAlign: "center", fontSize: "2.2rem", padding: "10px 10px" }}>
           <Link
             to="/admin/add-student/ADD"
-            style={{ textAlign: "center", fontSize: "2.2rem" }}
+            style={{ textAlign: "center", fontSize: "2.5rem" }}
           >
             Add New Student
-
           </Link>
         </h1>
       ) : (
-        ""
+        <h1 style={{ textAlign: "center", fontSize: "2.2rem", padding: "10px 10px" }}>
+          <Link
+            onClick={loginMessage}
+            style={{
+              textAlign: "center",
+              fontSize: "2.5rem",
+              color: "red",
+              textDecoration: "none",
+            }}
+          >
+            Add New Student
+          </Link>
+        </h1>
       )}
       <div className={`container ${styles.product}`}>
         <aside

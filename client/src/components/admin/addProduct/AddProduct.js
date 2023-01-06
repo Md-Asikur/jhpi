@@ -14,6 +14,7 @@ import Card from "../../card/Card";
 import Loader from "../../loader/Loader";
 import styles from "./AddProduct.module.scss";
 import { selectProducts } from "../../../redux/slice/productSlice";
+import { useValue } from "../../../context/ContextProvider";
 
 const categories = [
   { id: 1, name: "Civil" },
@@ -47,13 +48,18 @@ const initialState = {
   category: "",
   brand: "",
   desc: "",
+  dbid: "",
+  cretor:"",
+  cretorName:"",
 };
 
 const AddProduct = () => {
   const { id } = useParams();
   const products = useSelector(selectProducts);
   const productEdit = products.find((item) => item.id === id);
-  console.log(productEdit);
+  const {
+    state: { currentUser },
+  } = useValue();
 
   const [product, setProduct] = useState(() => {
     const newState = detectForm(id, { ...initialState }, productEdit);
@@ -141,7 +147,9 @@ const AddProduct = () => {
         Email: product.Email,
         Phone: product.Phone,
         imageURL: product.imageURL,
-
+        dbid: currentUser?.id,
+        cretor: currentUser?.photoURL,
+        cretorName: currentUser?.name,
         category: product.category,
         brand: product.brand,
         desc: product.desc,
@@ -160,7 +168,7 @@ const AddProduct = () => {
         pauseOnHover: true,
         draggable: true,
       });
-      navigate("/admin/all-products");
+      navigate("/admin/all-students");
     } catch (error) {
       setIsLoading(false);
       toast.error(error.message, {
@@ -207,7 +215,9 @@ const AddProduct = () => {
         category: product.category,
         brand: product.brand,
         desc: product.desc,
-
+        dbid: currentUser?.id,
+        cretor: currentUser?.photoURL,
+        cretorName: currentUser?.name,
         createdAt: productEdit.createdAt,
         editedAt: Timestamp.now().toDate(),
       });
@@ -220,7 +230,7 @@ const AddProduct = () => {
         pauseOnHover: true,
         draggable: true,
       });
-      navigate("/admin/all-products");
+      navigate("/admin/all-students");
     } catch (error) {
       setIsLoading(false);
       toast.error(error.message, {

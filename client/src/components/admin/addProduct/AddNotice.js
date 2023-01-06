@@ -15,6 +15,8 @@ import Loader from "../../loader/Loader";
 import styles from "./AddProduct.module.scss";
 
 import { selectNotices } from "../../../redux/slice/noticeSlice";
+import { updateCurrentUser } from "firebase/auth";
+import { useValue } from "../../../context/ContextProvider";
 
 const categories = [
 
@@ -37,10 +39,11 @@ const categories = [
 
 const initialState = {
   name: "",
-
+  dbid:"",
   date:"",
   imageURL: "",
-
+  cretor: "",
+   cretorName:"",
   category: "",
   brand: "",
   desc: ""
@@ -52,7 +55,9 @@ const AddNotice = () => {
   const notices = useSelector(selectNotices);
   const noticeEdit = notices.find((item) => item.id === id);
  
-
+ const {
+   state: { currentUser },
+ } = useValue();
   const [notice, setNotice] = useState(() => {
     const newState = detectForm(id, { ...initialState }, noticeEdit);
     return newState;
@@ -124,13 +129,15 @@ const AddNotice = () => {
 
         date: notice.date,
 
-      
+        dbid: currentUser?.id,
+        cretor: currentUser?.photoURL,
+        cretorName:currentUser?.name,
         imageURL: notice.imageURL,
 
         category: notice.category,
         brand: notice.brand,
         desc: notice.desc,
-      
+
         createdAt: Timestamp.now().toDate(),
       });
       setIsLoading(false);
@@ -173,7 +180,9 @@ const AddNotice = () => {
         name: notice.name,
 
         date: notice.date,
-
+        dbid: currentUser?.id,
+        cretor: currentUser?.photoURL,
+        cretorName:currentUser?.name,
         imageURL: notice.imageURL,
 
         category: notice.category,

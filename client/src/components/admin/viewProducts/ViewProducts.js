@@ -93,13 +93,15 @@ const ViewProducts = () => {
                 <th>Image</th>
                 <th>Name</th>
                 <th>Category</th>
-                <th>Price</th>
+                <th>Creator</th>
+                <th>Creator_Name</th>
                 <th>Actions</th>
               </tr>
             </thead>
             <tbody>
               {products.map((product, index) => {
-                const { id, name, price, imageURL, category } = product;
+                const { id, name, imageURL, category, cretor, cretorName } =
+                  product;
                 return (
                   <tr key={id}>
                     <td>{index + 1}</td>
@@ -108,7 +110,12 @@ const ViewProducts = () => {
                     </td>
                     <td>{name}</td>
                     <td>{category}</td>
-                    <td>{`$${price}`}</td>
+                  
+                    <td>
+                      <img src={cretor} alt={cretorName} style={{ width: "60px" }} />
+                    </td>
+                    <td>{cretorName}</td>
+                   
                     <td className={styles.icons}>
                       <Link to={`/product-details/${id}`}>
                         <FaEye size={18} color="green" />

@@ -93,13 +93,14 @@ const ViewNotices = () => {
                 <th>Image</th>
                 <th>Name</th>
                 <th>Category</th>
-               
+                <th>Creator</th>
+                <th>Creator_Name</th>
                 <th>Actions</th>
               </tr>
             </thead>
             <tbody>
               {notices.map((notice, index) => {
-                const { id, name, imageURL, category } = notice;
+                const { id, name, imageURL, category, cretor, cretorName } = notice;
                 return (
                   <tr key={id}>
                     <td>{index + 1}</td>
@@ -108,7 +109,10 @@ const ViewNotices = () => {
                     </td>
                     <td>{name}</td>
                     <td>{category}</td>
-
+                    <td>
+                      <img src={cretor} alt={cretorName} style={{ width: "60px" }} />
+                    </td>
+                    <td>{cretorName}</td>
                     <td className={styles.icons}>
                       <Link to={`/notices-details/${id}`}>
                         <FaEye size={18} color="green" />

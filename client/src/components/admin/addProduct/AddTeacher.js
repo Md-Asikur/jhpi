@@ -15,6 +15,7 @@ import Loader from "../../loader/Loader";
 import styles from "./AddProduct.module.scss";
 
 import { selectTeachers } from "../../../redux/slice/teacherSlice";
+import { useValue } from "../../../context/ContextProvider";
 
 const categories = [
   { id: 1, name: "Civil" },
@@ -64,13 +65,18 @@ const initialState = {
   worksAt: "",
   house: "",
   studietAt: "",
+  dbid: "",
+  cretor: "",
+  cretorName: "",
 };
 
 const AddTeacher = () => {
   const { id } = useParams();
   const teachers = useSelector(selectTeachers);
   const teacherEdit = teachers.find((item) => item.id === id);
-  console.log(teacherEdit);
+ const {
+   state: { currentUser },
+ } = useValue();
 
   const [teacher, setTeacher] = useState(() => {
     const newState = detectForm(id, { ...initialState }, teacherEdit);
@@ -146,7 +152,9 @@ const AddTeacher = () => {
         Email: teacher.Email,
         Phone: teacher.Phone,
         imageURL: teacher.imageURL,
-
+        dbid: currentUser?.id,
+        cretor: currentUser?.photoURL,
+        cretorName: currentUser?.name,
         category: teacher.category,
         brand: teacher.brand,
         desc: teacher.desc,
@@ -201,7 +209,9 @@ const AddTeacher = () => {
 
         Phone: teacher.Phone,
         imageURL: teacher.imageURL,
-
+        dbid: currentUser?.id,
+        cretor: currentUser?.photoURL,
+        cretorName: currentUser?.name,
         category: teacher.category,
         brand: teacher.brand,
         desc: teacher.desc,
