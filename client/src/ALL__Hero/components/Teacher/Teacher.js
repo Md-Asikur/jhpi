@@ -16,7 +16,7 @@ export default function Teacher() {
                 <img src="https://images.pexels.com/photos/5212361/pexels-photo-5212361.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" />
               </div>
               <h3>Md Sajedur Rahaman</h3>
-              <p>Principal</p>
+              <h2>Principal</h2>
               <div class="icons">
                 <a href="#">
                   <i class="fab fa-twitter"></i>
@@ -40,7 +40,7 @@ export default function Teacher() {
                 <img src="https://images.pexels.com/photos/5466340/pexels-photo-5466340.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" />
               </div>
               <h3>Gautam Kumar Biswas</h3>
-              <p>Depertment Head Computer</p>
+              <h2>Depertment Head Computer</h2>
               <div class="icons">
                 <a href="#">
                   <i class="fab fa-twitter"></i>
@@ -64,7 +64,7 @@ export default function Teacher() {
                 <img src="https://images.pexels.com/photos/12863577/pexels-photo-12863577.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" />
               </div>
               <h3>Mst Sharmin Sultana</h3>
-              <p>Teacher/Computer</p>
+              <h2>Teacher/Computer</h2>
               <div class="icons">
                 <a href="#">
                   <i class="fab fa-twitter"></i>
@@ -88,7 +88,7 @@ export default function Teacher() {
                 <img src="https://images.pexels.com/photos/4778667/pexels-photo-4778667.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" />
               </div>
               <h3>Mst Diya Khatun</h3>
-              <p>Teacher/Computer</p>
+              <h2>Teacher/Computer</h2>
               <div class="icons">
                 <a href="#">
                   <i class="fab fa-twitter"></i>
@@ -111,7 +111,7 @@ export default function Teacher() {
                 <img src="https://images.pexels.com/photos/11563212/pexels-photo-11563212.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" />
               </div>
               <h3>Md Shariful Islam</h3>
-              <p>Teacher/Computer</p>
+              <h2>Teacher/Computer</h2>
               <div class="icons">
                 <a href="#">
                   <i class="fab fa-twitter"></i>
@@ -135,7 +135,7 @@ export default function Teacher() {
               </div>
               <h3>Mst Tuli Khatun</h3>
 
-              <p>Designer</p>
+              <h2>Designer</h2>
 
               <div class="icons">
                 <a href="#">

@@ -1,13 +1,13 @@
 import React from 'react'
-import Top from '../OtherpageTop/Top'
+
 import "./about.css"
-import p3 from "../img/1.jpg";
-import I1 from "../img/2.jpg";
-import F1 from "../img/3.jpg";
-import C3 from "../img/4.jpg";
-import Fi1 from "../img/1.jpg";
+import p3 from "./img/c1.png";
+import I1 from "./img/c2.png";
+import F1 from "./img/c3.png";
+import C3 from "./img/c4.png";
+import Fi1 from "./img/c6.png";
 import Delivery from "./img/delivery.png";
-import HeroBg from "./img/heroBg.png";
+
 import Footer from '../../ALL__Hero/components/Footer/Footer';
 
 export default function About() {
@@ -17,28 +17,32 @@ export default function About() {
        name: "EVENTS",
        decp: "Chocolate & vanilla",
        price: "5.25",
-       imageSrc: I1,
+       imageSrc:
+         "https://images.pexels.com/photos/3761504/pexels-photo-3761504.jpeg?auto=compress&cs=tinysrgb&w=600",
      },
      {
        id: 2,
        name: "TEACHERS",
        decp: "Fresh Strawberries",
        price: "10.25",
-       imageSrc: F1,
+       imageSrc:
+         "https://images.pexels.com/photos/2982449/pexels-photo-2982449.jpeg?auto=compress&cs=tinysrgb&w=600",
      },
      {
        id: 3,
        name: "PROJECTS",
        decp: "Mixed Kebab Plate",
        price: "8.25",
-       imageSrc: C3,
+       imageSrc:
+         "https://images.pexels.com/photos/3771074/pexels-photo-3771074.jpeg?auto=compress&cs=tinysrgb&w=600",
      },
      {
        id: 4,
        name: "STUDENTS",
        decp: "Mixed Fish Kebab",
        price: "5.25",
-       imageSrc: Fi1,
+       imageSrc:
+         "https://images.pexels.com/photos/3775128/pexels-photo-3775128.jpeg?auto=compress&cs=tinysrgb&w=600",
      },
    ];
   return (
@@ -46,11 +50,10 @@ export default function About() {
       <section className="grid grid-cols-1 md:grid-cols-2 gap-2 w-full mb-6" id="home">
         <div className="py-2 flex-1 flex flex-col items-start justify-center gap-6">
           <div className="flex items-center gap-2 justify-center bg-orange-100 px-4 py-1 rounded-full">
-           
-              <a href="/" className="text-base text-orange-500 font-semibold">
-                COME TO JHPI
-              </a>
-           
+            <a href="/" className="text-base text-orange-500 font-semibold">
+              COME TO JHPI
+            </a>
+
             <div className="w-12 h-15 bg-white rounded-full overflow-hidden drop-shadow-xl">
               <img
                 src={Delivery}
@@ -65,10 +68,7 @@ export default function About() {
             <span className="text-orange-600 text-[3rem] lg:text-[5rem]">Your City</span>
           </p>
 
-          <p className=" text-2xl text-textColor text-center md:text-left md:w-[80%]">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima velit eaque
-            
-          </p>
+         
 
           <button
             type="button"
@@ -98,9 +98,6 @@ export default function About() {
                     {n.decp}
                   </p>
 
-                  <p className="text-sm font-semibold text-headingColor">
-                    <span className="text-xs text-red-600">$</span> {n.price}
-                  </p>
                 </div>
               ))}
           </div>
@@ -120,7 +117,7 @@ export default function About() {
           <p className="text-[1rem] lg:text-[2.5rem] font-normal tracking-wide text-headingColor">
             About Jhenaidah Polytechnic Institute (30023)Jhenaidah Polytechnic Institute
             <div class="image-section">
-              <img src={p3} />
+              <img src="https://images.pexels.com/photos/207684/pexels-photo-207684.jpeg?auto=compress&cs=tinysrgb&w=600" />
             </div>{" "}
             is situated on the eastern outskirts of the district town of Jhenaidah
             District. The institute is near the Jhenaidah Bus Terminal and on the north

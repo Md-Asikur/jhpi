@@ -1,3 +1,8 @@
+.evs{
+    text-align: center;
+    font-size: 4rem;
+    color: black;
+}
 .wrapper{
     padding: 125px 0 0 0;
     display: flex;
@@ -44,12 +49,12 @@
     background-position: center center;
 }
 .img-text{
-    background: linear-gradient(to top,rgba(255,255,255,0.9),rgba(255,255,255,0));
+    background: linear-gradient(to top,rgba(5, 73, 221, 0.562),rgba(10, 223, 74, 0.993));
     padding: 0 10px 5px 10px;
     width: 100%;
     height: auto;
     position: relative;
-    transform: translate(0, 114px);
+    transform: translate(0, 109px);
     line-height: 25px;
     transition: 0.5s ease;
     display: inline-block;
@@ -62,15 +67,17 @@
     margin: 16px 0;
     font-family: 'Alfa Slab One', cursive;
     font-size: 25px;
-    color: crimson;
-}
-.img-text p{
-    color: rgb(5, 1, 5);
+    color:black;
     border-bottom: none;
 }
+.img-text p{
+    color: rgb(10, 0, 10);
+    border-bottom: none;
+    text-decoration: none;
+}
 .services button{
-    color: crimson;
-    color: #fff;
+    color: rgb(253, 251, 251);
+    background-color: black;
     padding: 10px 35px;
     border: none;
     border-radius: 50px;

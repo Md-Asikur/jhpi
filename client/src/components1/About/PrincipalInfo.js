@@ -1,12 +1,7 @@
 import React from "react";
-import Top from "../OtherpageTop/Top";
+
 import "./principal.css";
-import p3 from "../img/1.jpg";
-import I1 from "../img/2.jpg";
-import F1 from "../img/3.jpg";
-import C3 from "../img/4.jpg";
-import Fi1 from "../img/1.jpg";
-import Delivery from "./img/delivery.png";
+
 import HeroBg from "./img/principal.png";
 import Footer from "../../ALL__Hero/components/Footer/Footer";
 

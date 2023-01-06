@@ -8,6 +8,7 @@ import courseImg04 from "../../assests/images/ui-ux.png";
 import FreeCourseCard from "./FreeCourseCard";
 
 import "./free-course.css";
+import { useNavigate } from "react-router-dom";
 
 const freeCourseData = [
   {
@@ -43,12 +44,13 @@ const freeCourseData = [
 ];
 
 const FreeCourse = () => {
+  const Navigate = useNavigate();
   return (
     <section>
-      <Container>
+      <Container className="mt-5 cursor-pointer" onClick={()=>Navigate("/about")}>
         <Row>
           <Col lg="12" className="text-center mb-5">
-            <h2 className="fw-bold fs-1">Our Free Courses</h2>
+            <h2 className="fw-bold" style={{fontSize:"4rem"}}>Our Free Courses</h2>
           </Col>
 
           {freeCourseData.map((item) => (

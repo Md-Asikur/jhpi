@@ -30,7 +30,7 @@ const HomeHero = () => {
       <ChooseUs />
       <Teacher />
       <Timer />
-     <MultiActionAreaCard/>
+      <MultiActionAreaCard/>
       {/* <Features /> */}
       <FreeCourse />
       <Testimonials />

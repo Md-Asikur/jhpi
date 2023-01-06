@@ -1,26 +1,19 @@
 import { useState } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import styles from "./Header.module.scss";
-import { FaShoppingCart, FaTimes, FaUserCircle } from "react-icons/fa";
+import { FaTimes, FaUserCircle } from "react-icons/fa";
 import { HiOutlineMenuAlt3 } from "react-icons/hi";
 import { auth } from "../../firebase/config";
-import { onAuthStateChanged, signOut } from "firebase/auth";
+import {  signOut } from "firebase/auth";
 import { toast } from "react-toastify";
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import {
-  REMOVE_ACTIVE_USER,
-  SET_ACTIVE_USER,
-} from "../../redux/slice/authSlice";
-import ShowOnLogin, { ShowOnLogout } from "../hiddenLink/hiddenLink";
-import { AdminOnlyLink } from "../adminOnlyRoute/AdminOnlyRoute";
-import {
-  CALCULATE_TOTAL_QUANTITY,
-  selectCartTotalQuantity,
-} from "../../redux/slice/cartSlice";
-import { Lock, Menu } from "@mui/icons-material";
 
-import logo1 from "../../components1/img/slack.png";
+
+import ShowOnLogin, { ShowOnLogout } from "../hiddenLink/hiddenLink";
+
+
+import { Lock} from "@mui/icons-material";
+
+
 import { useValue } from "../../context/ContextProvider";
 import UserIcons from "../../com_1/components/user/UserIcons";
 
@@ -51,7 +44,7 @@ const Header = () => {
   
 
   const fixNavbar = () => {
-    if (window.scrollY > 20) {
+    if (window.scrollY > 5) {
       setScrollPage(true);
     } else {
       setScrollPage(false);

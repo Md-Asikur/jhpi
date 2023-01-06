@@ -4,6 +4,7 @@ import { Container, Row, Col } from "reactstrap";
 import aboutImg from "../../assests/images/about-us.png";
 import CountUp from "react-countup";
 import "./about.css";
+import { Link } from "react-router-dom";
 
 const AboutUs = () => {
   return (
@@ -22,14 +23,14 @@ const AboutUs = () => {
               <p>
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                 Excepturi cupiditate animi deserunt libero nesciunt corporis
-                explicabo nobis ex quo molestiae!
+                explicabo nobis ex quo molestiae! <Link to="/about" style={{fontSize:"1.7rem"}}> More...</Link>
               </p>
 
               <div className="about__counter">
                 <div className=" d-flex gap-5 align-items-center">
                   <div className="single__counter">
                     <span className="counter">
-                      <CountUp start={0} end={25} duration={2} suffix="K" />
+                      <CountUp start={0} end={25} duration={4} suffix="K" />
                     </span>
 
                     <p className="counter__title">Completed Projects</p>
@@ -37,25 +38,25 @@ const AboutUs = () => {
 
                   <div className="single__counter">
                     <span className="counter">
-                      <CountUp start={0} end={12} duration={2} suffix="M" />
+                      <CountUp start={0} end={12} duration={4} suffix="K" />
                     </span>
 
-                    <p className="counter__title">Patient Around World</p>
+                    <p className="counter__title">Total Students</p>
                   </div>
                 </div>
 
                 <div className=" d-flex gap-5 align-items-center">
                   <div className="single__counter">
                     <span className="counter">
-                      <CountUp start={0} end={95} duration={2} suffix="M" />
+                      <CountUp start={0} end={10} duration={4} suffix="k" />
                     </span>
 
-                    <p className="counter__title">Ideas Raised Funds</p>
+                    <p className="counter__title">Runnig Students</p>
                   </div>
 
                   <div className="single__counter">
                     <span className="counter">
-                      <CountUp start={0} end={5} duration={2} suffix="K" />
+                      <CountUp start={0} end={5} duration={4} suffix="K" />
                     </span>
 
                     <p className="counter__title">Categories Served</p>
