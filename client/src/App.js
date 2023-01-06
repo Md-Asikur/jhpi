@@ -27,7 +27,7 @@ import Loading from "./com_1/components/Loading";
 function App() {
   return (
     <>
-      <div style={{ margin: "0px 2px" }}>
+      <div style={{ margin: "0px 4px" }}>
         <BrowserRouter>
           <Header />
           <Loading />
