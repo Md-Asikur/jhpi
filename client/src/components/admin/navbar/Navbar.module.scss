@@ -46,11 +46,13 @@
 }
 @media(max-width:768px){
  .navbar {
-  border-right: 1px solid #ccc;
-  
-  background-color: #fff;
  
-  z-index: 100;
+  border-right: 1px solid #ccc;
+  position: fixed;
+  background-color: #fff;
+  padding: 15px 2px;
+ 
+  margin-left: -10px;
   
   .user {
     display: flex;
@@ -72,8 +74,9 @@
     
       position: relative;
       a {
-        font-size: 12px;
+        font-size: 10px;
         display: block;
+        padding: 10px 0px;
         width: 100%;
       }
     }

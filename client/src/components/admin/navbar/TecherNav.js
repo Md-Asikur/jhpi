@@ -6,6 +6,7 @@ import styles from "./Navbar.module.scss";
 import { FaUserCircle } from "react-icons/fa";
 import { useValue } from "../../../context/ContextProvider";
 import { Avatar, Badge, Box, IconButton, Tooltip } from "@mui/material";
+import { toast } from "react-toastify";
 
 const activeLink = ({ isActive }) => (isActive ? `${styles.active}` : "");
 
@@ -15,6 +16,18 @@ const TeacherNavbar = () => {
     state: { currentUser },
     dispatch,
   } = useValue();
+  const loginMessage = () => {
+    toast.warning("🦄PLESE LOGIN AND CONTINUE!", {
+      position: "bottom-center",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+
+      theme: "dark",
+    });
+  };
   return (
     <div className={styles.navbar}>
       <div className={styles.user}>
@@ -35,11 +48,19 @@ const TeacherNavbar = () => {
       </div>
       <nav>
         <ul>
-          <li>
-            <NavLink to="/teacher/all-teachers" className={activeLink}>
-              All Teacher
-            </NavLink>
-          </li>
+          {(currentUser && currentUser?.role === "admin") || currentUser ? (
+            <li>
+              <NavLink to="/teacher/all-teachers" className={activeLink}>
+                All Teachers
+              </NavLink>
+            </li>
+          ) : (
+            <li>
+              <NavLink onClick={loginMessage} className={activeLink}>
+                All Teachers
+              </NavLink>
+            </li>
+          )}
           <li>
             <NavLink to="/teacher/add-teacher/ADD" className={activeLink}>
               Add Teacher

@@ -471,7 +471,7 @@ const AddProduct = () => {
             />
 
             <button className="--btn --btn-primary">
-              {detectForm(id, "Save Product", "Edit Product")}
+              {detectForm(id, "Save Student", "Edit Student")}
             </button>
           </form>
         </Card>

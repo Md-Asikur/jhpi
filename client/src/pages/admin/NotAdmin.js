@@ -18,18 +18,7 @@ const NoticeAdmin = () => {
   const {
     state: { currentUser },
   } = useValue();
-  const loginMessage = () => {
-    toast.warning("🦄PLESE LOGIN AND CONTINUE!", {
-      position: "bottom-center",
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-
-      theme: "dark",
-    });
-  };
+ 
   return (
     <div className={styles.admin}>
       <div className={styles.navbar}>
@@ -38,7 +27,7 @@ const NoticeAdmin = () => {
       <div className={styles.content}>
         <Routes>
           <Route path="home" element={<NoticeHome />} />
-          {(currentUser && currentUser?.role === "admin") ? (
+          {(currentUser && currentUser?.role === "admin" ||currentUser) ? (
             <Route path="all-notices" element={<ViewNotice />} />
           ) :""}
           <Route path="add-notice/:id" element={<AddNotice />} />

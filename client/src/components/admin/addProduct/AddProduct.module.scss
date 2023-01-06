@@ -53,3 +53,12 @@
   border: 1px solid var(--dark-blue);
   padding: 5px;
 }
+@media(max-width:768px){
+  .product h2{
+    text-align: center;
+    padding-left: 10px;
+  }
+  .product .card{
+    padding-left: 20px;
+  }
+}

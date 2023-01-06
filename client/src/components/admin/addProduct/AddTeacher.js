@@ -420,7 +420,7 @@ const AddTeacher = () => {
             />
 
             <button className="--btn --btn-primary">
-              {detectForm(id, "Save Product", "Edit Product")}
+              {detectForm(id, "Save Teacher", "Edit Teacher")}
             </button>
           </form>
         </Card>

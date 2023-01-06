@@ -23,7 +23,7 @@ const NoticeDetails = () => {
   const { document } = useFetchDocument("notices", id);
   const { data } = useFetchCollection("reviews");
   const filteredReviews = data.filter((review) => review.noticeID === id);
-  
+ 
 
   const {
     state: { currentUser },

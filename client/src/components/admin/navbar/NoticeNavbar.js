@@ -33,7 +33,12 @@ const NoticeNavbar = () => {
       <div className={styles.user}>
         <Avatar
           src={currentUser?.photoURL}
-          style={{ width: "40px", height: "40px", backgroundPosition: "center",borderRadius:"50%" }}
+          style={{
+            width: "40px",
+            height: "40px",
+            backgroundPosition: "center",
+            borderRadius: "50%",
+          }}
           alt={currentUser?.name}
         >
           {currentUser?.name?.charAt(0).toUpperCase()}
@@ -43,16 +48,16 @@ const NoticeNavbar = () => {
       </div>
       <nav>
         <ul>
-          {currentUser && currentUser?.role === "admin" ? (
+          {(currentUser && currentUser?.role === "admin") || currentUser ? (
             <li>
               <NavLink to="/notice/all-notices" className={activeLink}>
-               All Notice
+                All Notices
               </NavLink>
             </li>
           ) : (
             <li>
               <NavLink onClick={loginMessage} className={activeLink}>
-               All Notice
+                All Notice
               </NavLink>
             </li>
           )}

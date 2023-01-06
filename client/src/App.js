@@ -27,7 +27,7 @@ import Loading from "./com_1/components/Loading";
 function App() {
   return (
     <>
-      <div style={{ margin: "0px 4px" }}>
+      <div className="appp">
         <BrowserRouter>
           <Header />
           <Loading />
@@ -68,7 +68,7 @@ function App() {
                 </AdminOnlyRoute>
               }
             />
-            <Route path="/product-details/:id" element={<ProductDetails />} />
+            <Route path="/student-details/:id" element={<ProductDetails />} />
             <Route path="/teachers-details/:id" element={<TeacherDetails />} />
             <Route path="/notices-details/:id" element={<NoticeDetails />} />
 

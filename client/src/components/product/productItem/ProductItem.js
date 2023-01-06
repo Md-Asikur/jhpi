@@ -27,7 +27,7 @@ const ProductItem = ({ product, grid, id, name, price, desc, imageURL,Roll,Deper
 
   return (
     <Card cardClass={grid ? `${styles.grid}` : `${styles.list}`}>
-      <Link to={`/product-details/${id}`}>
+      <Link to={`/student-details/${id}`}>
         <div className={styles.img}>
           <img src={imageURL} alt={name} />
         </div>
@@ -44,7 +44,7 @@ const ProductItem = ({ product, grid, id, name, price, desc, imageURL,Roll,Deper
 
         <button
           className="--btn --btn-danger"
-          onClick={() => navigate(`/product-details/${id}`)}
+          onClick={() => navigate(`/student-details/${id}`)}
         >
           SEE MORE
         </button>

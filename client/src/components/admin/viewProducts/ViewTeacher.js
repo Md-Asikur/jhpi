@@ -12,7 +12,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 import useFetchCollection from "../../../customHooks/useFetchCollection";
 import { selectTeachers, STORE_TEACHERS } from "../../../redux/slice/teacherSlice";
-
+import { useValue } from "../../../context/ContextProvider";
 const ViewTeachers = () => {
   const { data, isLoading } = useFetchCollection("teachers");
   const teachers = useSelector(selectTeachers);
@@ -76,64 +76,133 @@ const ViewTeachers = () => {
       });
     }
   };
+const {
+  state: { currentUser },
+} = useValue();
 
+const filteredTeacher = teachers.filter((teacher) => teacher.dbid === currentUser?.id);
+console.log(filteredTeacher);
   return (
     <>
-      {isLoading && <Loader />}
-      <div className={styles.table}>
-        <h2>All Teachers</h2>
+      {currentUser?.role === "admin" ? (
+        <>
+          {" "}
+          {isLoading && <Loader />}
+          <div className={styles.table}>
+            <h2>All Teachers</h2>
 
-        {teachers.length === 0 ? (
-          <p>No Teacher found.</p>
-        ) : (
-          <table>
-            <thead>
-              <tr>
-                <th>s/n</th>
-                <th>Image</th>
-                <th>Name</th>
-                <th>Category</th>
-                <th>Creator</th>
-                <th>Creator_Name</th>
-                <th>Actions</th>
-              </tr>
-            </thead>
-            <tbody>
-              {teachers.map((teacher, index) => {
-                const { id, name, imageURL, category, cretor, cretorName } = teacher;
-                return (
-                  <tr key={id}>
-                    <td>{index + 1}</td>
-                    <td>
-                      <img src={imageURL} alt={name} style={{ width: "100px" }} />
-                    </td>
-                    <td>{name}</td>
-                    <td>{category}</td>
-                    <td>
-                      <img src={cretor} alt={cretorName} style={{ width: "60px" }} />
-                    </td>
-                    <td>{cretorName}</td>
-                    <td className={styles.icons}>
-                      <Link to={`/teachers-details/${id}`}>
-                        <FaEye size={18} color="green" />
-                      </Link>
-                      <Link to={`/teacher/add-teacher/${id}`}>
-                        <FaEdit size={20} color="green" />
-                      </Link>
-                      &nbsp;
-                      <FaTrashAlt
-                        size={18}
-                        color="red"
-                        onClick={() => confirmDelete(id, imageURL)}
-                      />
-                    </td>
+            {teachers.length === 0 ? (
+              <p>No Teacher found.</p>
+            ) : (
+              <table>
+                <thead>
+                  <tr>
+                    <th>s/n</th>
+                    <th>Image</th>
+                    <th>Name</th>
+                    <th>Category</th>
+                    <th>Creator</th>
+                    <th>Creator_Name</th>
+                    <th>Actions</th>
                   </tr>
-                );
-              })}
-            </tbody>
-          </table>
-        )}
-      </div>
+                </thead>
+                <tbody>
+                  {teachers.map((teacher, index) => {
+                    const { id, name, imageURL, category, cretor, cretorName } = teacher;
+                    return (
+                      <tr key={id}>
+                        <td>{index + 1}</td>
+                        <td>
+                          <img src={imageURL} alt={name} style={{ width: "100px" }} />
+                        </td>
+                        <td>{name}</td>
+                        <td>{category}</td>
+                        <td>
+                          <img src={cretor} alt={cretorName} style={{ width: "60px" }} />
+                        </td>
+                        <td>{cretorName}</td>
+                        <td className={styles.icons}>
+                          <Link to={`/teachers-details/${id}`}>
+                            <FaEye size={18} color="green" />
+                          </Link>
+                          <Link to={`/teacher/add-teacher/${id}`}>
+                            <FaEdit size={20} color="green" />
+                          </Link>
+                          &nbsp;
+                          <FaTrashAlt
+                            size={18}
+                            color="red"
+                            onClick={() => confirmDelete(id, imageURL)}
+                          />
+                        </td>
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </table>
+            )}
+          </div>
+        </>
+      ) : (
+        <>
+          {" "}
+          {isLoading && <Loader />}
+          <div className={styles.table}>
+            <h2>All Teachers Created By Me</h2>
+
+            {filteredTeacher.length === 0 ? (
+              <p>No My Created Teacher found.</p>
+            ) : (
+              <table>
+                <thead>
+                  <tr>
+                    <th>s/n</th>
+                    <th>Image</th>
+                    <th>Name</th>
+                    <th>Category</th>
+                    <th>Creator</th>
+                    <th>Creator_Name</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {filteredTeacher.map((teacher, index) => {
+                    const { id, name, imageURL, category, cretor, cretorName } = teacher;
+                    return (
+                      <tr key={id}>
+                        <td>{index + 1}</td>
+                        <td>
+                          <img src={imageURL} alt={name} style={{ width: "100px" }} />
+                        </td>
+                        <td>{name}</td>
+                        <td>{category}</td>
+                        <td>
+                          <img src={cretor} alt={cretorName} style={{ width: "60px" }} />
+                        </td>
+                        <td>{cretorName}</td>
+                        <td className={styles.icons}>
+                          <Link to={`/teachers-details/${id}`}>
+                            <FaEye size={18} color="green" />
+                          </Link>
+                          <Link to={`/teacher/add-teacher/${id}`}>
+                            <FaEdit size={20} color="green" />
+                          </Link>
+                          &nbsp;
+                          <FaTrashAlt
+                            size={18}
+                            color="red"
+                            onClick={() => confirmDelete(id, imageURL)}
+                          />
+                        </td>
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </table>
+            )}
+          </div>
+        </>
+      )}
     </>
   );
 };
