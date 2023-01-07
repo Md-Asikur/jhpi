@@ -31,7 +31,7 @@ const ReviewProducts = () => {
  } = useValue();
   const name = currentUser?.name;
   const photoURL = currentUser?.photoURL;
-  const active = currentUser?.active;
+ 
   const dbid = currentUser?.id;
   const email = currentUser?.email;
    const role = currentUser?.role;
@@ -50,7 +50,7 @@ const ReviewProducts = () => {
       email,
       dbid,
       photoURL,
-      active,
+     
       role,
       productID: id,
       rate,

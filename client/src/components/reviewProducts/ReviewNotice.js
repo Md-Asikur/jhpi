@@ -29,7 +29,7 @@ const ReviewNotices = () => {
   } = useValue();
   const name = currentUser?.name;
   const photoURL = currentUser?.photoURL;
-  const active = currentUser?.active;
+ 
   const dbid = currentUser?.id;
   const email = currentUser?.email;
   const role = currentUser?.role;
@@ -48,7 +48,7 @@ const ReviewNotices = () => {
       email,
       dbid,
       photoURL,
-      active,
+     
       role,
       noticeID: id,
       rate,
