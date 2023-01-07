@@ -9,6 +9,7 @@
   background-image: linear-gradient(0deg, #0880ac 0%, #0769c4 80%);
 background-size: cover;
 background-position: center center;
+padding-top: 5px;
    
 }
 .head{
@@ -32,6 +33,7 @@ background-position: center center;
     max-width: 1600px;
     margin: 0 auto;
     padding:1rem;
+    padding-top: 3px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -257,6 +259,9 @@ background-position: center center;
   background-color: #fff;
 }
 @media(max-width:988px){
+  .fixed{
+    padding-top: 8px;
+  }
    ul {
         display: block;
         .logo-mobile {
