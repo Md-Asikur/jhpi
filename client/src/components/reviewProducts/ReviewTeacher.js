@@ -135,10 +135,10 @@ const ReviewTeachers = () => {
               </button>
             ) : (
               <Link
-                onClick={loginMessage}
+                onClick={() => dispatch({ type: "OPEN_LOGIN" })}
                 className="--btn --btn-danger"
-                  style={{ zIndex: "9999999", textDecoration: "none", hover: "none" }}
-                  disabled
+                style={{ zIndex: "9999999", textDecoration: "none", hover: "none" }}
+                disabled
               >
                 PLESE LOGIN AND CONTINUE!
               </Link>

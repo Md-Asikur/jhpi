@@ -21,11 +21,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@media(max-width:768px){
-  .appp{
-  margin: 0px 0px;
-}
-}
+
 * {
   margin: 0;
   padding: 0;
@@ -41,6 +37,8 @@ body {
   font-family: var(--font-family);
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
+  
 }
 
 section {

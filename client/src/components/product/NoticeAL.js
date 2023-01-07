@@ -76,7 +76,12 @@ const NoticeAL = () => {
         <h1 style={{ textAlign: "center", fontSize: "2.5rem", padding: "10px 10px" }}>
           <Link
             onClick={loginMessage}
-            style={{ textAlign: "center", fontSize: "2.5rem", color: "red",textDecoration:"none" }}
+            style={{
+              textAlign: "center",
+              fontSize: "2.5rem",
+              color: "red",
+              textDecoration: "none",
+            }}
           >
             Add New NOTICE
           </Link>

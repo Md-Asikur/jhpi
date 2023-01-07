@@ -80,7 +80,8 @@ const Header = () => {
       <header className={scrollPage ? `${styles.fixed}` : null}>
         <div className={styles.header}>
           <h1 style={{ color: "white", cursor: "pointer" }} onClick={() => navigate("/")}>
-            JH<span style={{ color: "coral" }}>PI</span>
+            JH<span style={{ color: "coral" }}>PI'ASIK</span>
+            
           </h1>
 
           <nav className={showMenu ? `${styles["show-nav"]}` : `${styles["hide-nav"]}`}>
@@ -155,7 +156,7 @@ const Header = () => {
                   Principal Info
                 </NavLink>
               </li>
-              <li style={{padding:"-10px 10px"}}>
+              <li style={{ padding: "-10px 10px" }}>
                 {!currentUser ? (
                   <a
                     color="inherit"

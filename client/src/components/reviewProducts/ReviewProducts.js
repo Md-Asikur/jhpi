@@ -135,7 +135,11 @@ const loginMessage = () => {
                 Submit Review
               </button>
             ) : (
-              <Link onClick={loginMessage} className="--btn --btn-danger" style={{zIndex:"9999999",textDecoration:"none",hover:"none"}}>
+              <Link
+                onClick={() => dispatch({ type: "OPEN_LOGIN" })}
+                className="--btn --btn-danger"
+                style={{ zIndex: "9999999", textDecoration: "none", hover: "none" }}
+              >
                 PLESE LOGIN AND CONTINUE!
               </Link>
             )}

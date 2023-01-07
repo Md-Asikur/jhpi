@@ -31,7 +31,7 @@ import ProjectDetails from "./components/product/productDetails/ProjectDetails";
 function App() {
   return (
     <>
-      <div className="appp">
+     
         <BrowserRouter>
           <Header />
           <Loading />
@@ -107,7 +107,7 @@ function App() {
           </Routes>
           <Footer />
         </BrowserRouter>
-      </div>
+      
     </>
   );
 }
