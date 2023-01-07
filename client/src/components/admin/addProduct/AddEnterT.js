@@ -215,7 +215,7 @@ const AddEnter = () => {
   return (
     <>
       {isLoading && <Loader />}
-      <div className={styles.product}>
+      <div className={styles.enter}>
         <h2>{detectForm(id, "Add New Entertainment", "Edit Entertainment")}</h2>
         <Card cardClass={styles.card}>
           <form onSubmit={detectForm(id, addTEnter, editEnter)}>

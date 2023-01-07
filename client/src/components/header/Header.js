@@ -155,7 +155,7 @@ const Header = () => {
                   Principal Info
                 </NavLink>
               </li>
-              <li>
+              <li style={{padding:"-10px 10px"}}>
                 {!currentUser ? (
                   <a
                     color="inherit"

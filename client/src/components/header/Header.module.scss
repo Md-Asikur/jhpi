@@ -5,7 +5,10 @@
   left: 0;
   transition: all 0.5s;
   z-index: 99999;
-
+  background-color: #08AEEA;
+  background-image: linear-gradient(0deg, #0880ac 0%, #07c46f 80%);
+background-size: cover;
+background-position: center center;
    
 }
 .head{
@@ -15,7 +18,11 @@
 }
 header {
   width: 100%;
-  background-color: var(--dark-blue);
+  //background-color: var(--dark-blue);
+    // background-color: #08AEEA;
+ background-image: linear-gradient(0deg, #048a3cc0 0%, #027699d5 100%);
+background-size: cover;
+background-position: center center;
   color: #fff;
    z-index: 99999;
 
@@ -58,6 +65,7 @@ header {
       li {
         margin: 0 5px;
         a {
+          cursor: pointer;
           color: #fff;
           font-size: 1.9rem;
           padding: 0px 10px;
@@ -127,7 +135,8 @@ header {
       left: -13px;
       width: 50%;
       height: 102vh;
-      background-color: var(--dark-blue);
+      // background-color: var(--dark-blue);
+      background-color: rgba(35, 1, 114, 0.929);
       padding: 1rem;
       z-index: 999;
       transform: translateX(-200%);
@@ -160,10 +169,10 @@ header {
         }
         li {
           padding: 5px 0;
-          border-bottom: 1px solid #333;
+          border-bottom: 1px solid rgb(51, 51, 51);
           a {
             display: block;
-            font-size: 2rem;
+            font-size: 1.3rem;
            
           }
         }
@@ -248,6 +257,26 @@ header {
   background-color: #fff;
 }
 @media(max-width:988px){
+   ul {
+        display: block;
+        .logo-mobile {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          > * {
+            cursor: pointer;
+          }
+        }
+        li {
+          padding: 5px 0;
+          border-bottom: 1px solid #333;
+          a {
+            display: block;
+            font-size: 5px;
+           
+          }
+        }
+      }
   header {
   width: 100%;
   background-color: var(--dark-blue);
@@ -277,6 +306,7 @@ header {
     }
   }
 }
+
 }
 @media(max-width:588px){
   header {
