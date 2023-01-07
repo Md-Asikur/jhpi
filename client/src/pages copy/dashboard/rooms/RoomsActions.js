@@ -2,11 +2,22 @@ import { Box, IconButton, Tooltip } from "@mui/material";
 import { Delete, Edit, Preview } from "@mui/icons-material";
 import { useValue } from "../../../context/ContextProvider";
 import { clearRoom, deleteRoom } from "../../../actions/room";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import useFetchDocument from "../../../customHooks/useFetchDocument";
+import { useEffect, useState } from "react";
 
 const RoomsActions = ({ params }) => {
-  const { _id, lng, lat, price, title, description, images, uid, studentName,roll } =
-    params.row;
+  const { id } = useParams();
+  const [teacher, setTeacher] = useState(null);
+
+  const { document } = useFetchDocument("teachers", id);
+ 
+  const { imageURL, name, Email, Phone } = params.teacher;
+
+  useEffect(() => {
+    setTeacher(document);
+  }, [document]);
+
   const {
     dispatch,
     state: { currentUser, updatedRoom, addedImages, images: newImages },
@@ -19,13 +30,13 @@ const RoomsActions = ({ params }) => {
     } else {
       clearRoom(dispatch, currentUser, newImages);
     }
-    dispatch({ type: "UPDATE_LOCATION", payload: { lng, lat } });
+    dispatch({ type: "UPDATE_LOCATION", payload: {  } });
     dispatch({
       type: "UPDATE_DETAILS",
-      payload: { price, title, description, studentName,roll },
+      payload: {  },
     });
-    dispatch({ type: "UPDATE_IMAGES", payload: images });
-    dispatch({ type: "UPDATE_UPDATED_ROOM", payload: { _id, uid } });
+    dispatch({ type: "UPDATE_IMAGES", payload:'' });
+    dispatch({ type: "UPDATE_UPDATED_ROOM", payload: {  } });
     dispatch({ type: "UPDATE_SECTION", payload: 2 });
     navigate("/");
   };
@@ -33,7 +44,7 @@ const RoomsActions = ({ params }) => {
     <Box>
       <Tooltip title="View room details">
         <IconButton
-          onClick={() => dispatch({ type: "UPDATE_ROOM", payload: params.row })}
+          onClick={() => dispatch({ type: "UPDATE_ROOM", payload: params.teacher })}
         >
           <Preview />
         </IconButton>
@@ -44,7 +55,7 @@ const RoomsActions = ({ params }) => {
         </IconButton>
       </Tooltip>
       <Tooltip title="Delete this room">
-        <IconButton onClick={() => deleteRoom(params.row, currentUser, dispatch)}>
+        <IconButton onClick={() => deleteRoom(params.teacher, currentUser, dispatch)}>
           <Delete />
         </IconButton>
       </Tooltip>

@@ -28,7 +28,7 @@ const Rooms = ({ setSelectedLink, link }) => {
         headerName: 'Photo',
         width: 70,
         renderCell: (params) => (
-          <Avatar src={params.row.images[0]} variant="rounded" />
+          <Avatar src={params.teacher.imgURL} variant="rounded" />
         ),
         sortable: false,
         filterable: false,
@@ -37,7 +37,7 @@ const Rooms = ({ setSelectedLink, link }) => {
         field: 'price',
         headerName: 'Cost',
         width: 70,
-        renderCell: (params) => '$' + params.row.price,
+        renderCell: (params) => '$' + params.teacher.name,
       },
       { field: 'title', headerName: 'Title', width: 170 },
       { field: 'description', headerName: 'Description', width: 200 },
@@ -85,7 +85,7 @@ const Rooms = ({ setSelectedLink, link }) => {
         component="h3"
         sx={{ textAlign: 'center', mt: 3, mb: 3 }}
       >
-        Manage Rooms
+        Manage Teachers
       </Typography>
       <DataGrid
         columns={columns}

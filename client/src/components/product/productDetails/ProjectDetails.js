@@ -176,7 +176,7 @@ const ProjectDetails = () => {
                       <span>
                         <img src={photoURL} className="w-20 h-20 rounded" />
                       </span>
-                      {currentUser?.role === "admin" ? (
+                      {currentUser?.role === "admin" || dbid === currentUser?.id ? (
                         <>
                           <Link
                             onClick={() => confirmDelete(id)}

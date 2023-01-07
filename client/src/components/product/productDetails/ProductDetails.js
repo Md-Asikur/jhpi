@@ -242,9 +242,14 @@ console.log(filteredReviews)
                       <span>
                         <img src={photoURL} className="w-20 h-20 rounded" />
                       </span>
-                      {currentUser?.role === "admin" ? (
+                      {currentUser?.role === "admin" || dbid === currentUser?.id ? (
                         <>
-                          <Link onClick={() => confirmDelete(id)} style={{color:"red",textDecoration:"none"}}>DELETE REVIEW</Link>
+                          <Link
+                            onClick={() => confirmDelete(id)}
+                            style={{ color: "red", textDecoration: "none" }}
+                          >
+                            DELETE REVIEW
+                          </Link>
                         </>
                       ) : (
                         ""

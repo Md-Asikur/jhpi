@@ -89,7 +89,7 @@ export default function Dashboard() {
               <Typography variant="h6" noWrap component="div" sx={{ flexGrow: 1 }}>
                 <Link
                   style={{ color: "white", fontWeight: "400", fontStyle: "inherit" }}
-                  to="/admin/add-product/ADD"
+                  to="/admin/add-teacher/ADD"
                 >
                   Add-Teacher
                 </Link>
@@ -101,7 +101,7 @@ export default function Dashboard() {
               <Typography variant="h6" noWrap component="div" sx={{ flexGrow: 1 }}>
                 <Link
                   style={{ color: "white", fontWeight: "400", fontStyle: "inherit" }}
-                  to="/admin/add-product/ADD"
+                  to="/admin/add-student/ADD"
                 >
                   Add-Students
                 </Link>
