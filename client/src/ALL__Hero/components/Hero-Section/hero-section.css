@@ -21,3 +21,8 @@
   border-radius: 50px;
   margin-top: 20px;
 }
+@media(max-width:768px){
+  .search button{
+ display: none;
+}
+}

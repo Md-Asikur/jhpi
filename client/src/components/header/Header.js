@@ -79,9 +79,26 @@ const Header = () => {
     <>
       <header className={scrollPage ? `${styles.fixed}` : null}>
         <div className={styles.header}>
-          <h1 style={{ color: "white", cursor: "pointer" }} onClick={() => navigate("/")}>
-            JH<span style={{ color: "coral" }}>PI'ASIK</span>
-            
+          <h1
+            style={{
+              color: "white",
+              cursor: "pointer",
+              fontWeight: "700",
+              fontFamily: "cursive",
+            }}
+            onClick={() => navigate("/")}
+          >
+            JH
+            <span
+              style={{
+                color: "#9d0191",
+                fontWeight: "700",
+                fontFamily: "cursive",
+                cursor: "pointer",
+              }}
+            >
+              PI'ASIK
+            </span>
           </h1>
 
           <nav className={showMenu ? `${styles["show-nav"]}` : `${styles["hide-nav"]}`}>
@@ -100,11 +117,11 @@ const Header = () => {
                 <FaTimes size={22} color="#fff" onClick={hideMenu} />
               </li>
               <li>
-                {currentUser && currentUser?.role === "admin" ? (
+                {/* {currentUser && currentUser?.role === "admin" ? (
                   <Link to="/admin/home">Admin</Link>
                 ) : (
                   ""
-                )}
+                )} */}
 
                 {/* <Link to="/admin/home">
                   <button className="--btn --btn-primary">Admin</button>
