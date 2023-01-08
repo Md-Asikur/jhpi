@@ -16,9 +16,11 @@ import {
   STORE_ENTERTAINMENTS,
 } from "../../../redux/slice/EnterSlice";
 import { useValue } from "../../../context/ContextProvider";
+import Main from "../../../pages copy/dashboard/main/Main";
 
 const ViewEnter = () => {
   const { data, isLoading } = useFetchCollection("entertainments");
+ 
   const entertainments = useSelector(selectEntertainments);
   const dispatch = useDispatch();
   useEffect(() => {
@@ -203,7 +205,8 @@ const ViewEnter = () => {
                 </tbody>
               </table>
             )}
-          </div>
+            </div>
+           
         </>
       )}
     </>

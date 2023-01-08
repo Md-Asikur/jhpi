@@ -10,6 +10,7 @@ import { FILTER_BY_SEARCH, selectFilteredEntertainment, SORT_ENTERTAINMENT } fro
 
 import EnterItem from "../productItem/EnterItem";
 import EnterPagination from "../../pagination/EnterPagination";
+import Main from "../../../pages copy/dashboard/main/Main";
 
 const EnterList = ({ entertainments }) => {
   const [grid, setGrid] = useState(true);
@@ -71,7 +72,11 @@ const EnterList = ({ entertainments }) => {
             {currentEntertainment.map((entertainment) => {
               return (
                 <div key={entertainment.id}>
-                  <EnterItem {...entertainment} grid={grid} entertainment={entertainment} />
+                  <EnterItem
+                    {...entertainment}
+                    grid={grid}
+                    entertainment={entertainment}
+                  />
                 </div>
               );
             })}
@@ -84,6 +89,7 @@ const EnterList = ({ entertainments }) => {
         entertainmentsPerPage={entertainmentsPerPage}
         totalEntertainments={filteredEntertainments.length}
       />
+    
     </div>
   );
 };

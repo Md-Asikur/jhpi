@@ -120,12 +120,7 @@ const SideList = ({ open, setOpen }) => {
           ]
         : []),
 
-      {
-        title: "Rooms",
-        icon: <KingBed />,
-        link: "rooms",
-        component: <Rooms {...{ setSelectedLink, link: "rooms" }} />,
-      },
+     
       {
         title: "Requests",
         icon: <NotificationsActive />,
