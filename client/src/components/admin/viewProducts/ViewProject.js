@@ -90,7 +90,7 @@ const ViewProject = ({ setSelectedLink, link }) => {
         <>
           {isLoading && <Loader />}
           <div className={styles.table}>
-            <h2>All Project</h2>
+            <h2 style={{ color: "whitesmoke" }}>All Projects</h2>
             <h1
               style={{
                 textAlign: "center",
@@ -162,7 +162,7 @@ const ViewProject = ({ setSelectedLink, link }) => {
           {" "}
           {isLoading && <Loader />}
           <div className={styles.table}>
-            <h2>All Project Created By Me</h2>
+            <h2 style={{ color: "whitesmoke" }}>All Project Created By Me</h2>
             <h1
               style={{
                 textAlign: "center",

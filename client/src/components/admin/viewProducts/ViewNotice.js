@@ -90,7 +90,7 @@ const ViewNotices = ({ setSelectedLink, link }) => {
         <>
           {isLoading && <Loader />}
           <div className={styles.table}>
-            <h2>All Notices</h2>
+            <h2 style={{ color: "whitesmoke" }}>All Notices</h2>
             <h1
               style={{
                 textAlign: "center",
@@ -162,7 +162,7 @@ const ViewNotices = ({ setSelectedLink, link }) => {
           {" "}
           {isLoading && <Loader />}
           <div className={styles.table}>
-            <h2>All Notices Created By Me</h2>
+            <h2 style={{ color: "whitesmoke" }}>All Notices Created By Me</h2>
             <h1
               style={{
                 textAlign: "center",

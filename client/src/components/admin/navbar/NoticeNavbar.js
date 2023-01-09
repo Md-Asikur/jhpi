@@ -50,7 +50,7 @@ const NoticeNavbar = () => {
         <ul>
           {(currentUser && currentUser?.role === "admin") || currentUser ? (
             <li>
-              <NavLink to="/notice/all-notices" className={activeLink}>
+              <NavLink to="/dashboard/all-notices" className={activeLink}>
                 All Notices
               </NavLink>
             </li>

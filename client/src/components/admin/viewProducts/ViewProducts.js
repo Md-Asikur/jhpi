@@ -93,7 +93,7 @@ const ViewProducts = ({ setSelectedLink, link }) => {
           {" "}
           {isLoading && <Loader />}
           <div className={styles.table}>
-            <h2>All Students</h2>
+            <h2 style={{ color: "whitesmoke" }}>All Students</h2>
             <h1
               style={{
                 textAlign: "center",
@@ -167,7 +167,7 @@ const ViewProducts = ({ setSelectedLink, link }) => {
           {" "}
           {isLoading && <Loader />}
           <div className={styles.table}>
-            <h2>All Students Created By Me</h2>
+            <h2 style={{ color: "whitesmoke" }}>All Students Created By Me</h2>
             <h1
               style={{
                 textAlign: "center",

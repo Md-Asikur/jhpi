@@ -49,7 +49,7 @@ const ProjectNav = () => {
         <ul>
           {(currentUser && currentUser?.role === "admin") || currentUser ? (
             <li>
-              <NavLink to="/project/all-projects" className={activeLink}>
+              <NavLink to="/dashboard/all-projects" className={activeLink}>
                 All Projects
               </NavLink>
             </li>

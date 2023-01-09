@@ -50,7 +50,7 @@ const Navbar = () => {
         <ul>
           {(currentUser && currentUser?.role === "admin") || currentUser ? (
             <li>
-              <NavLink to="/admin/all-students" className={activeLink}>
+              <NavLink to="/dashboard/all-students" className={activeLink}>
                 All Students
               </NavLink>
             </li>

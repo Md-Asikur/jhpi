@@ -49,7 +49,7 @@ const EnterNav = () => {
         <ul>
           {(currentUser && currentUser?.role === "admin") || currentUser ? (
             <li>
-              <NavLink to="/entertainment/all-entertainments" className={activeLink}>
+              <NavLink to="/dashboard/all-entertainments" className={activeLink}>
                 All Entertainments
               </NavLink>
             </li>

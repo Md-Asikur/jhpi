@@ -97,7 +97,7 @@ const ViewEnter = ({ setSelectedLink, link }) => {
         <>
           {isLoading && <Loader />}
           <div className={styles.table}>
-            <h2>All Entertainment</h2>
+            <h2 style={{ color: "whitesmoke" }}>All Entertainments</h2>
 
             <h1
               style={{
@@ -171,7 +171,7 @@ const ViewEnter = ({ setSelectedLink, link }) => {
           {" "}
           {isLoading && <Loader />}
           <div className={styles.table}>
-            <h2>All Entertainment Created By Me</h2>
+            <h2 style={{ color: "whitesmoke" }}>All Entertainment Created By Me</h2>
             <h1
               style={{
                 textAlign: "center",
