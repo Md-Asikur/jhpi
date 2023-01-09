@@ -63,7 +63,11 @@ export default function Dashboard() {
     <ThemeProvider theme={darkTheme}>
       <Box sx={{ display: "flex" }}>
         <CssBaseline />
-        <AppBar position="fixed" open={open}>
+        <AppBar
+          position="fixed"
+          open={open}
+          style={{ padding: "12px 0px", overflow: "hidden", zIndex: "999999999999" }}
+        >
           <Toolbar>
             <IconButton
               color="inherit"
@@ -89,7 +93,7 @@ export default function Dashboard() {
               <Typography variant="h6" noWrap component="div" sx={{ flexGrow: 1 }}>
                 <Link
                   style={{ color: "white", fontWeight: "400", fontStyle: "inherit" }}
-                  to="/admin/add-teacher/ADD"
+                  to="/teacher/add-teacher/ADD"
                 >
                   Add-Teacher
                 </Link>

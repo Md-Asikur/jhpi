@@ -14,10 +14,13 @@ import useFetchCollection from "../../../customHooks/useFetchCollection";
 import { selectNotices, STORE_NOTICES } from "../../../redux/slice/noticeSlice";
 import { useValue } from "../../../context/ContextProvider";
 
-const ViewNotices = () => {
+const ViewNotices = ({ setSelectedLink, link }) => {
+  useEffect(() => {
+    setSelectedLink(link);
+  }, []);
   const { data, isLoading } = useFetchCollection("notices");
   const notices = useSelector(selectNotices);
-const dispatch=useDispatch()
+  const dispatch = useDispatch();
   useEffect(() => {
     dispatch(
       STORE_NOTICES({
@@ -75,12 +78,12 @@ const dispatch=useDispatch()
       });
     }
   };
-const {
-  state: { currentUser },
-} = useValue();
+  const {
+    state: { currentUser },
+  } = useValue();
 
-const filteredNotice = notices.filter((notice) => notice.dbid === currentUser?.id);
-console.log(filteredNotice);
+  const filteredNotice = notices.filter((notice) => notice.dbid === currentUser?.id);
+  console.log(filteredNotice);
   return (
     <>
       {currentUser?.role === "admin" ? (
@@ -88,7 +91,20 @@ console.log(filteredNotice);
           {isLoading && <Loader />}
           <div className={styles.table}>
             <h2>All Notices</h2>
-
+            <h1
+              style={{
+                textAlign: "center",
+                fontSize: "2.2rem",
+                padding: "10px 10px",
+              }}
+            >
+              <Link
+                to="/notice/add-notice/ADD"
+                style={{ textAlign: "center", fontSize: "2.2rem" }}
+              >
+                Add New Notice
+              </Link>
+            </h1>
             {notices.length === 0 ? (
               <p>No Notice found.</p>
             ) : (
@@ -147,7 +163,20 @@ console.log(filteredNotice);
           {isLoading && <Loader />}
           <div className={styles.table}>
             <h2>All Notices Created By Me</h2>
-
+            <h1
+              style={{
+                textAlign: "center",
+                fontSize: "2.2rem",
+                padding: "10px 10px",
+              }}
+            >
+              <Link
+                to="/Notice/add-Notice/ADD"
+                style={{ textAlign: "center", fontSize: "2.2rem" }}
+              >
+                Add New Notice
+              </Link>
+            </h1>
             {filteredNotice.length === 0 ? (
               <p>No My Created Notice found.</p>
             ) : (

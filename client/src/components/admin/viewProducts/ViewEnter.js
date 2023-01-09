@@ -18,9 +18,12 @@ import {
 import { useValue } from "../../../context/ContextProvider";
 import Main from "../../../pages copy/dashboard/main/Main";
 
-const ViewEnter = () => {
+const ViewEnter = ({ setSelectedLink, link }) => {
+   useEffect(() => {
+     setSelectedLink(link);
+   }, []);
   const { data, isLoading } = useFetchCollection("entertainments");
- 
+
   const entertainments = useSelector(selectEntertainments);
   const dispatch = useDispatch();
   useEffect(() => {
@@ -96,6 +99,21 @@ const ViewEnter = () => {
           <div className={styles.table}>
             <h2>All Entertainment</h2>
 
+            <h1
+              style={{
+                textAlign: "center",
+                fontSize: "2.2rem",
+                padding: "10px 10px",
+              }}
+            >
+              <Link
+                to="/entertainment/add-entertainment/ADD"
+                style={{ textAlign: "center", fontSize: "2.2rem" }}
+              >
+                Add New Entertainment
+              </Link>
+            </h1>
+
             {entertainments.length === 0 ? (
               <p>No Entertainment found.</p>
             ) : (
@@ -154,7 +172,20 @@ const ViewEnter = () => {
           {isLoading && <Loader />}
           <div className={styles.table}>
             <h2>All Entertainment Created By Me</h2>
-
+            <h1
+              style={{
+                textAlign: "center",
+                fontSize: "2.2rem",
+                padding: "10px 10px",
+              }}
+            >
+              <Link
+                to="/entertainment/add-entertainment/ADD"
+                style={{ textAlign: "center", fontSize: "2.2rem" }}
+              >
+                Add New Entertainment
+              </Link>
+            </h1>
             {filteredEntertainment.length === 0 ? (
               <p>No My Created Entertainment found.</p>
             ) : (
@@ -205,8 +236,7 @@ const ViewEnter = () => {
                 </tbody>
               </table>
             )}
-            </div>
-           
+          </div>
         </>
       )}
     </>

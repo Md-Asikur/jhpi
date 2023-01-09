@@ -16,7 +16,10 @@ import {
 import useFetchCollection from "../../../customHooks/useFetchCollection";
 import { useValue } from "../../../context/ContextProvider";
 
-const ViewProducts = () => {
+const ViewProducts = ({ setSelectedLink, link }) => {
+  useEffect(() => {
+    setSelectedLink(link);
+  }, []);
   const { data, isLoading } = useFetchCollection("products");
   const products = useSelector(selectProducts);
 
@@ -77,12 +80,12 @@ const ViewProducts = () => {
       });
     }
   };
-const {
-  state: { currentUser },
-} = useValue();
+  const {
+    state: { currentUser },
+  } = useValue();
 
-const filteredStudents = products.filter((student) => student.dbid === currentUser?.id);
-console.log(filteredStudents);
+  const filteredStudents = products.filter((student) => student.dbid === currentUser?.id);
+  console.log(filteredStudents);
   return (
     <>
       {currentUser?.role === "admin" ? (
@@ -91,7 +94,20 @@ console.log(filteredStudents);
           {isLoading && <Loader />}
           <div className={styles.table}>
             <h2>All Students</h2>
-
+            <h1
+              style={{
+                textAlign: "center",
+                fontSize: "2.2rem",
+                padding: "10px 10px",
+              }}
+            >
+              <Link
+                to="/admin/add-Student/ADD"
+                style={{ textAlign: "center", fontSize: "2.2rem" }}
+              >
+                Add New Student
+              </Link>
+            </h1>
             {products.length === 0 ? (
               <p>No Student found.</p>
             ) : (
@@ -152,7 +168,20 @@ console.log(filteredStudents);
           {isLoading && <Loader />}
           <div className={styles.table}>
             <h2>All Students Created By Me</h2>
-
+            <h1
+              style={{
+                textAlign: "center",
+                fontSize: "2.2rem",
+                padding: "10px 10px",
+              }}
+            >
+              <Link
+                to="/admin/add-Student/ADD"
+                style={{ textAlign: "center", fontSize: "2.2rem" }}
+              >
+                Add New Student
+              </Link>
+            </h1>
             {filteredStudents.length === 0 ? (
               <p>No My Created Student found.</p>
             ) : (

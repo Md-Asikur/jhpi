@@ -1,11 +1,18 @@
 import {
+  CampaignOutlined,
   ChevronLeft,
   Dashboard,
+  Diversity1,
+  Diversity2,
+  Diversity3,
+  Group,
+  HomeRepairService,
   KingBed,
   Logout,
   MarkChatUnread,
   NotificationsActive,
   PeopleAlt,
+  SportsTennis,
 } from '@mui/icons-material';
 import {
   Avatar,
@@ -34,6 +41,11 @@ import Rooms from './rooms/Rooms';
 import Users from './users/Users';
 import useCheckToken from '../../hooks/useCheckToken';
 import IsAdmin from './utils/IsAdmin';
+import ViewEnter from '../../components/admin/viewProducts/ViewEnter';
+import ViewProducts from '../../components/admin/viewProducts/ViewProducts';
+import ViewTeachers from '../../components/admin/viewProducts/ViewTeacher';
+import ViewProject from '../../components/admin/viewProducts/ViewProject';
+import ViewNotices from '../../components/admin/viewProducts/ViewNotice';
 
 const drawerWidth = 240;
 
@@ -120,18 +132,35 @@ const SideList = ({ open, setOpen }) => {
           ]
         : []),
 
-     
       {
-        title: "Requests",
-        icon: <NotificationsActive />,
-        link: "requests",
-        component: <Requests {...{ setSelectedLink, link: "requests" }} />,
+        title: "All-Students",
+        icon: <Diversity3 />,
+        link: "All-Students",
+        component: <ViewProducts {...{ setSelectedLink, link: "All-Students" }} />,
       },
       {
-        title: "Messages",
-        icon: <MarkChatUnread />,
-        link: "messages",
-        component: <Messages {...{ setSelectedLink, link: "messages" }} />,
+        title: "All-Teachers",
+        icon: <Diversity1 />,
+        link: "All-Teachers",
+        component: <ViewTeachers {...{ setSelectedLink, link: "All-Teachers" }} />,
+      },
+      {
+        title: "All-Projects",
+        icon: <HomeRepairService />,
+        link: "All-Projects",
+        component: <ViewProject {...{ setSelectedLink, link: "All-Projects" }} />,
+      },
+      {
+        title: "All-Notices",
+        icon: <CampaignOutlined />,
+        link: "All-Notices",
+        component: <ViewNotices {...{ setSelectedLink, link: "All-Notices" }} />,
+      },
+      {
+        title: "Entertainments",
+        icon: <SportsTennis />,
+        link: "all-entertainments",
+        component: <ViewEnter {...{ setSelectedLink, link: "all-entertainments" }} />,
       },
     ],
     []
@@ -156,18 +185,18 @@ const SideList = ({ open, setOpen }) => {
     <>
       <Drawer variant="permanent" open={open}>
         <DrawerHeader>
-          <IconButton onClick={() => setOpen(false)}>
+          <IconButton onClick={() => setOpen(false)} style={{ paddingTop: "40px" }}>
             <ChevronLeft />
           </IconButton>
         </DrawerHeader>
         <Divider />
         <List>
           {list.map((item) => (
-            <ListItem key={item.title} disablePadding sx={{ display: 'block' }}>
+            <ListItem key={item.title} disablePadding sx={{ display: "block" }}>
               <ListItemButton
                 sx={{
                   minHeight: 48,
-                  justifyContent: open ? 'initial' : 'center',
+                  justifyContent: open ? "initial" : "center",
                   px: 2.5,
                 }}
                 onClick={() => navigate(item.link)}
@@ -176,35 +205,30 @@ const SideList = ({ open, setOpen }) => {
                 <ListItemIcon
                   sx={{
                     minWidth: 0,
-                    mr: open ? 3 : 'auto',
-                    justifyContent: 'center',
+                    mr: open ? 3 : "auto",
+                    justifyContent: "center",
                   }}
                 >
                   {item.icon}
                 </ListItemIcon>
-                <ListItemText
-                  primary={item.title}
-                  sx={{ opacity: open ? 1 : 0 }}
-                />
+                <ListItemText primary={item.title} sx={{ opacity: open ? 1 : 0 }} />
               </ListItemButton>
             </ListItem>
           ))}
         </List>
         <Divider />
-        <Box sx={{ mx: 'auto', mt: 3, mb: 1 }}>
-          <Tooltip title={currentUser?.name || ''}>
+        <Box sx={{ mx: "auto", mt: 3, mb: 1 }}>
+          <Tooltip title={currentUser?.name || ""}>
             <Avatar
               src={currentUser?.photoURL}
               {...(open && { sx: { width: 100, height: 100 } })}
             />
           </Tooltip>
         </Box>
-        <Box sx={{ textAlign: 'center' }}>
+        <Box sx={{ textAlign: "center" }}>
           {open && <Typography>{currentUser?.name}</Typography>}
-          <Typography variant="body2">{currentUser?.role || 'role'}</Typography>
-          {open && (
-            <Typography variant="body2">{currentUser?.email}</Typography>
-          )}
+          <Typography variant="body2">{currentUser?.role || "role"}</Typography>
+          {open && <Typography variant="body2">{currentUser?.email}</Typography>}
           <Tooltip title="Logout" sx={{ mt: 1 }}>
             <IconButton onClick={handleLogout}>
               <Logout />
@@ -218,10 +242,6 @@ const SideList = ({ open, setOpen }) => {
           {list.map((item) => (
             <Route key={item.title} path={item.link} element={item.component} />
           ))}
-          <Route path="*" element={IsAdmin(currentUser) ? (<Main {...{ setSelectedLink, link: "" }} />) : (
-            <Rooms {...{ setSelectedLink, link: "rooms" }} />
-          )}
-          />
         </Routes>
       </Box>
     </>

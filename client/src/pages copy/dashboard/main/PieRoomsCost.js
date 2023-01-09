@@ -2,8 +2,9 @@ import { Box, Stack, Typography } from '@mui/material';
 import { useEffect, useState } from 'react';
 import { PieChart, Pie, Cell, Tooltip } from 'recharts';
 import { useValue } from '../../../context/ContextProvider';
+import useFetchCollection from '../../../customHooks/useFetchCollection';
 
-const COLORS = ['#00C49F', '#0088FE', '#FFBB28', '#FF8042'];
+const COLORS = ["#00C49F", "#0088FE", "#FFBB28", "#FF8042", "#804"];
 
 const RADIAN = Math.PI / 180;
 const renderCustomizedLabel = ({
@@ -35,7 +36,11 @@ export default function PieRoomsCost() {
     state: { rooms },
   } = useValue();
   const [costGroups, setCostGroups] = useState([]);
-
+const entertainment = useFetchCollection("entertainments");
+const teachers = useFetchCollection("teachers");
+const students = useFetchCollection("products");
+const notices = useFetchCollection("notices");
+const projects = useFetchCollection("projects");
   useEffect(() => {
     let free = 0,
       lessThan15 = 0,
@@ -48,10 +53,11 @@ export default function PieRoomsCost() {
       moreThan35++;
     });
     setCostGroups([
-      { name: 'Free Stay', qty: free },
-      { name: 'Less Than $15', qty: lessThan15 },
-      { name: 'Between $15 & $35', qty: between15And35 },
-      { name: 'More Than $35', qty: moreThan35 },
+      { name: "Students", qty: students?.data?.length },
+      { name: "Teachers", qty: teachers?.data?.length },
+      { name: "Projects", qty: projects?.data?.length },
+      { name: "Notices", qty: notices?.data?.length },
+      { name: "Entertainments", qty: entertainment?.data?.length },
     ]);
   }, [rooms]);
   return (
@@ -63,7 +69,7 @@ export default function PieRoomsCost() {
         flexWrap: 'wrap',
       }}
     >
-      <PieChart width={200} height={200}>
+      <PieChart width={300} height={200}>
         <Pie
           data={costGroups}
           labelLine={false}
@@ -79,12 +85,12 @@ export default function PieRoomsCost() {
         <Tooltip />
       </PieChart>
       <Stack gap={2}>
-        <Typography variant="h6">Rooms Cost</Typography>
+        <Typography variant="h3" color="white">JHPI ALL INFORMATION CHART</Typography>
         <Box sx={{ display: 'flex', gap: 3, flexWrap: 'wrap' }}>
           {COLORS.map((color, i) => (
             <Stack key={color} alignItems="center" spacing={1}>
               <Box sx={{ width: 20, height: 20, background: color }} />
-              <Typography variant="body2" sx={{ opacity: 0.7 }}>
+              <Typography variant="body2" sx={{ opacity: 0.7 }} style={{color:"white",fontSize:"1.5rem"}}>
                 {costGroups[i]?.name}
               </Typography>
             </Stack>

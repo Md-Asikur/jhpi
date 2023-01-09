@@ -13,7 +13,10 @@ import { useDispatch, useSelector } from "react-redux";
 import useFetchCollection from "../../../customHooks/useFetchCollection";
 import { selectTeachers, STORE_TEACHERS } from "../../../redux/slice/teacherSlice";
 import { useValue } from "../../../context/ContextProvider";
-const ViewTeachers = () => {
+const ViewTeachers = ({ setSelectedLink, link }) => {
+  useEffect(() => {
+    setSelectedLink(link);
+  }, []);
   const { data, isLoading } = useFetchCollection("teachers");
   const teachers = useSelector(selectTeachers);
 
@@ -22,7 +25,7 @@ const ViewTeachers = () => {
   useEffect(() => {
     dispatch(
       STORE_TEACHERS({
-       teachers: data,
+        teachers: data,
       })
     );
   }, [dispatch, data]);
@@ -76,12 +79,12 @@ const ViewTeachers = () => {
       });
     }
   };
-const {
-  state: { currentUser },
-} = useValue();
+  const {
+    state: { currentUser },
+  } = useValue();
 
-const filteredTeacher = teachers.filter((teacher) => teacher.dbid === currentUser?.id);
-console.log(filteredTeacher);
+  const filteredTeacher = teachers.filter((teacher) => teacher.dbid === currentUser?.id);
+  console.log(filteredTeacher);
   return (
     <>
       {currentUser?.role === "admin" ? (
@@ -90,7 +93,20 @@ console.log(filteredTeacher);
           {isLoading && <Loader />}
           <div className={styles.table}>
             <h2>All Teachers</h2>
-
+            <h1
+              style={{
+                textAlign: "center",
+                fontSize: "2.2rem",
+                padding: "10px 10px",
+              }}
+            >
+              <Link
+                to="/Teacher/add-Teacher/ADD"
+                style={{ textAlign: "center", fontSize: "2.2rem" }}
+              >
+                Add New Teacher
+              </Link>
+            </h1>
             {teachers.length === 0 ? (
               <p>No Teacher found.</p>
             ) : (
@@ -149,7 +165,20 @@ console.log(filteredTeacher);
           {isLoading && <Loader />}
           <div className={styles.table}>
             <h2>All Teachers Created By Me</h2>
-
+            <h1
+              style={{
+                textAlign: "center",
+                fontSize: "2.2rem",
+                padding: "10px 10px",
+              }}
+            >
+              <Link
+                to="/Teacher/add-Teacher/ADD"
+                style={{ textAlign: "center", fontSize: "2.2rem" }}
+              >
+                Add New Teacher
+              </Link>
+            </h1>
             {filteredTeacher.length === 0 ? (
               <p>No My Created Teacher found.</p>
             ) : (

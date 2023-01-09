@@ -14,7 +14,10 @@ import useFetchCollection from "../../../customHooks/useFetchCollection";
 import { selectProjects, STORE_PROJECTS } from "../../../redux/slice/projectSlice";
 import { useValue } from "../../../context/ContextProvider";
 
-const ViewProject = () => {
+const ViewProject = ({ setSelectedLink, link }) => {
+  useEffect(() => {
+    setSelectedLink(link);
+  }, []);
   const { data, isLoading } = useFetchCollection("projects");
   const projects = useSelector(selectProjects);
   const dispatch = useDispatch();
@@ -88,7 +91,20 @@ const ViewProject = () => {
           {isLoading && <Loader />}
           <div className={styles.table}>
             <h2>All Project</h2>
-
+            <h1
+              style={{
+                textAlign: "center",
+                fontSize: "2.2rem",
+                padding: "10px 10px",
+              }}
+            >
+              <Link
+                to="/Project/add-Project/ADD"
+                style={{ textAlign: "center", fontSize: "2.2rem" }}
+              >
+                Add New Project
+              </Link>
+            </h1>
             {projects.length === 0 ? (
               <p>No Project found.</p>
             ) : (
@@ -147,7 +163,20 @@ const ViewProject = () => {
           {isLoading && <Loader />}
           <div className={styles.table}>
             <h2>All Project Created By Me</h2>
-
+            <h1
+              style={{
+                textAlign: "center",
+                fontSize: "2.2rem",
+                padding: "10px 10px",
+              }}
+            >
+              <Link
+                to="/Project/add-Project/ADD"
+                style={{ textAlign: "center", fontSize: "2.2rem" }}
+              >
+                Add New Project
+              </Link>
+            </h1>
             {filteredProject.length === 0 ? (
               <p>No My Created Project found.</p>
             ) : (
