@@ -39,16 +39,16 @@ const categories = [
 const initialState = {
   name: "",
 
- 
   imageURL: "",
 
   category: "",
   brand: "",
   desc: "",
- 
+
   dbid: "",
   cretor: "",
   cretorName: "",
+  cretorEmail: "",
 };
 
 const AddEnter = () => {
@@ -128,15 +128,15 @@ const AddEnter = () => {
       const docRef = addDoc(collection(db, "entertainments"), {
         name: entertainment.name,
 
-       
         imageURL: entertainment.imageURL,
         dbid: currentUser?.id,
         cretor: currentUser?.photoURL,
         cretorName: currentUser?.name,
+        cretorEmail: currentUser?.email,
         category: entertainment.category,
         brand: entertainment.brand,
         desc: entertainment.desc,
-       
+
         createdAt: Timestamp.now().toDate(),
       });
       setIsLoading(false);
@@ -151,7 +151,7 @@ const AddEnter = () => {
         pauseOnHover: true,
         draggable: true,
       });
-      navigate("/entertainment/all-entertainments");
+      navigate("/dashboard/all-entertainments");
     } catch (error) {
       setIsLoading(false);
       toast.error(error.message, {
@@ -182,12 +182,12 @@ const AddEnter = () => {
         dbid: currentUser?.id,
         cretor: currentUser?.photoURL,
         cretorName: currentUser?.name,
+        cretorEmail: currentUser?.email,
         category: entertainment.category,
         brand: entertainment.brand,
         desc: entertainment.desc,
-       
-       
-       createdAt: Timestamp.now().toDate(),
+
+        createdAt: Timestamp.now().toDate(),
       });
       setIsLoading(false);
       toast.success("Entertainment Edited Successfully", {
@@ -198,7 +198,7 @@ const AddEnter = () => {
         pauseOnHover: true,
         draggable: true,
       });
-      navigate("/entertainment/all-entertainments");
+      navigate("/dashboard/all-entertainments");
     } catch (error) {
       setIsLoading(false);
       toast.error(error.message, {

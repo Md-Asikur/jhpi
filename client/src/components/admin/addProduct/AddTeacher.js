@@ -68,6 +68,7 @@ const initialState = {
   dbid: "",
   cretor: "",
   cretorName: "",
+  cretorEmail: "",
 };
 
 const AddTeacher = () => {
@@ -155,6 +156,7 @@ const AddTeacher = () => {
         dbid: currentUser?.id,
         cretor: currentUser?.photoURL,
         cretorName: currentUser?.name,
+        cretorEmail: currentUser?.email,
         category: teacher.category,
         brand: teacher.brand,
         desc: teacher.desc,
@@ -178,7 +180,7 @@ const AddTeacher = () => {
         pauseOnHover: true,
         draggable: true,
       });
-      navigate("/teacher/all-teachers");
+      navigate("/dashboard/all-teachers");
     } catch (error) {
       setIsLoading(false);
       toast.error(error.message, {
@@ -212,6 +214,7 @@ const AddTeacher = () => {
         dbid: currentUser?.id,
         cretor: currentUser?.photoURL,
         cretorName: currentUser?.name,
+        cretorEmail: currentUser?.email,
         category: teacher.category,
         brand: teacher.brand,
         desc: teacher.desc,
@@ -233,7 +236,7 @@ const AddTeacher = () => {
         pauseOnHover: true,
         draggable: true,
       });
-      navigate("/teacher/all-teachers");
+      navigate("/dashboard/all-teachers");
     } catch (error) {
       setIsLoading(false);
       toast.error(error.message, {

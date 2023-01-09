@@ -39,6 +39,7 @@ const initialState = {
   dbid: "",
   cretor: "",
   cretorName: "",
+  cretorEmail: "",
 };
 
 const AddProject = () => {
@@ -122,6 +123,7 @@ const AddProject = () => {
         dbid: currentUser?.id,
         cretor: currentUser?.photoURL,
         cretorName: currentUser?.name,
+        cretorEmail: currentUser?.email,
         category: project.category,
         brand: project.brand,
         desc: project.desc,
@@ -140,7 +142,7 @@ const AddProject = () => {
         pauseOnHover: true,
         draggable: true,
       });
-      navigate("/project/all-projects");
+      navigate("/dashboard/all-projects");
     } catch (error) {
       setIsLoading(false);
       toast.error(error.message, {
@@ -171,6 +173,7 @@ const AddProject = () => {
         dbid: currentUser?.id,
         cretor: currentUser?.photoURL,
         cretorName: currentUser?.name,
+        cretorEmail:currentUser?.email,
         category: project.category,
         brand: project.brand,
         desc: project.desc,
@@ -186,7 +189,7 @@ const AddProject = () => {
         pauseOnHover: true,
         draggable: true,
       });
-      navigate("/project/all-projects");
+      navigate("/dashboard/all-projects");
     } catch (error) {
       setIsLoading(false);
       toast.error(error.message, {

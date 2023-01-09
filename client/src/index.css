@@ -21,6 +21,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@media(max-width:768px){
+.appp{
+  padding: 0px 2px;
+  overflow-x: hidden;
+}
+}
 
 * {
   margin: 0;

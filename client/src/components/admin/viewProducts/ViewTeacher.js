@@ -119,12 +119,21 @@ const ViewTeachers = ({ setSelectedLink, link }) => {
                     <th>Category</th>
                     <th>Creator</th>
                     <th>Creator_Name</th>
+                    <th>Creator_Email</th>
                     <th>Actions</th>
                   </tr>
                 </thead>
                 <tbody>
                   {teachers.map((teacher, index) => {
-                    const { id, name, imageURL, category, cretor, cretorName } = teacher;
+                    const {
+                      id,
+                      name,
+                      imageURL,
+                      category,
+                      cretor,
+                      cretorName,
+                      cretorEmail,
+                    } = teacher;
                     return (
                       <tr key={id}>
                         <td>{index + 1}</td>
@@ -137,6 +146,7 @@ const ViewTeachers = ({ setSelectedLink, link }) => {
                           <img src={cretor} alt={cretorName} style={{ width: "60px" }} />
                         </td>
                         <td>{cretorName}</td>
+                        <td>{cretorEmail}</td>
                         <td className={styles.icons}>
                           <Link to={`/teachers-details/${id}`}>
                             <FaEye size={18} color="green" />
@@ -191,12 +201,21 @@ const ViewTeachers = ({ setSelectedLink, link }) => {
                     <th>Category</th>
                     <th>Creator</th>
                     <th>Creator_Name</th>
+                    <th>Creator_Email</th>
                     <th>Actions</th>
                   </tr>
                 </thead>
                 <tbody>
                   {filteredTeacher.map((teacher, index) => {
-                    const { id, name, imageURL, category, cretor, cretorName } = teacher;
+                    const {
+                      id,
+                      name,
+                      imageURL,
+                      category,
+                      cretor,
+                      cretorName,
+                      cretorEmail,
+                    } = teacher;
                     return (
                       <tr key={id}>
                         <td>{index + 1}</td>
@@ -209,6 +228,7 @@ const ViewTeachers = ({ setSelectedLink, link }) => {
                           <img src={cretor} alt={cretorName} style={{ width: "60px" }} />
                         </td>
                         <td>{cretorName}</td>
+                        <td>{cretorEmail}</td>
                         <td className={styles.icons}>
                           <Link to={`/teachers-details/${id}`}>
                             <FaEye size={18} color="green" />

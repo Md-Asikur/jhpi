@@ -117,12 +117,21 @@ const ViewNotices = ({ setSelectedLink, link }) => {
                     <th>Category</th>
                     <th>Creator</th>
                     <th>Creator_Name</th>
+                    <th>Creator-Email</th>
                     <th>Actions</th>
                   </tr>
                 </thead>
                 <tbody>
                   {notices.map((notice, index) => {
-                    const { id, name, imageURL, category, cretor, cretorName } = notice;
+                    const {
+                      id,
+                      name,
+                      imageURL,
+                      category,
+                      cretor,
+                      cretorName,
+                      cretorEmail,
+                    } = notice;
                     return (
                       <tr key={id}>
                         <td>{index + 1}</td>
@@ -135,6 +144,7 @@ const ViewNotices = ({ setSelectedLink, link }) => {
                           <img src={cretor} alt={cretorName} style={{ width: "60px" }} />
                         </td>
                         <td>{cretorName}</td>
+                        <td>{cretorEmail}</td>
                         <td className={styles.icons}>
                           <Link to={`/notices-details/${id}`}>
                             <FaEye size={18} color="green" />
@@ -189,12 +199,21 @@ const ViewNotices = ({ setSelectedLink, link }) => {
                     <th>Category</th>
                     <th>Creator</th>
                     <th>Creator_Name</th>
+                    <th>Creator_Email</th>
                     <th>Actions</th>
                   </tr>
                 </thead>
                 <tbody>
                   {filteredNotice.map((notice, index) => {
-                    const { id, name, imageURL, category, cretor, cretorName } = notice;
+                    const {
+                      id,
+                      name,
+                      imageURL,
+                      category,
+                      cretor,
+                      cretorName,
+                      cretorEmail,
+                    } = notice;
                     return (
                       <tr key={id}>
                         <td>{index + 1}</td>
@@ -207,6 +226,7 @@ const ViewNotices = ({ setSelectedLink, link }) => {
                           <img src={cretor} alt={cretorName} style={{ width: "60px" }} />
                         </td>
                         <td>{cretorName}</td>
+                        <td>{cretorEmail}</td>
                         <td className={styles.icons}>
                           <Link to={`/notices-details/${id}`}>
                             <FaEye size={18} color="green" />

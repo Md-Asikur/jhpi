@@ -39,15 +39,15 @@ const categories = [
 
 const initialState = {
   name: "",
-  dbid:"",
-  date:"",
+  dbid: "",
+  date: "",
   imageURL: "",
   cretor: "",
-   cretorName:"",
+  cretorName: "",
+  cretorEmail: "",
   category: "",
   brand: "",
-  desc: ""
-  
+  desc: "",
 };
 
 const AddNotice = () => {
@@ -131,7 +131,8 @@ const AddNotice = () => {
 
         dbid: currentUser?.id,
         cretor: currentUser?.photoURL,
-        cretorName:currentUser?.name,
+        cretorName: currentUser?.name,
+        cretorEmail: currentUser?.email,
         imageURL: notice.imageURL,
 
         category: notice.category,
@@ -152,7 +153,7 @@ const AddNotice = () => {
         pauseOnHover: true,
         draggable: true,
       });
-      navigate("/notice/all-notices");
+      navigate("/dashboard/all-notices");
     } catch (error) {
       setIsLoading(false);
       toast.error(error.message, {
@@ -182,7 +183,8 @@ const AddNotice = () => {
         date: notice.date,
         dbid: currentUser?.id,
         cretor: currentUser?.photoURL,
-        cretorName:currentUser?.name,
+        cretorName: currentUser?.name,
+        cretorEmail: currentUser?.email,
         imageURL: notice.imageURL,
 
         category: notice.category,
@@ -200,7 +202,7 @@ const AddNotice = () => {
         pauseOnHover: true,
         draggable: true,
       });
-      navigate("/notice/all-notices");
+      navigate("/dashboard/all-notices");
     } catch (error) {
       setIsLoading(false);
       toast.error(error.message, {

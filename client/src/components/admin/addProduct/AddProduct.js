@@ -49,8 +49,9 @@ const initialState = {
   brand: "",
   desc: "",
   dbid: "",
-  cretor:"",
-  cretorName:"",
+  cretor: "",
+  cretorName: "",
+  cretorEmail: "",
 };
 
 const AddProduct = () => {
@@ -150,6 +151,7 @@ const AddProduct = () => {
         dbid: currentUser?.id,
         cretor: currentUser?.photoURL,
         cretorName: currentUser?.name,
+        cretorEmail: currentUser?.email,
         category: product.category,
         brand: product.brand,
         desc: product.desc,
@@ -168,7 +170,7 @@ const AddProduct = () => {
         pauseOnHover: true,
         draggable: true,
       });
-      navigate("/admin/all-students");
+      navigate("/dashboard/all-students");
     } catch (error) {
       setIsLoading(false);
       toast.error(error.message, {
@@ -218,6 +220,7 @@ const AddProduct = () => {
         dbid: currentUser?.id,
         cretor: currentUser?.photoURL,
         cretorName: currentUser?.name,
+        cretorEmail: currentUser?.email,
         createdAt: productEdit.createdAt,
         editedAt: Timestamp.now().toDate(),
       });
@@ -230,7 +233,7 @@ const AddProduct = () => {
         pauseOnHover: true,
         draggable: true,
       });
-      navigate("/admin/all-students");
+      navigate("/dashboard/all-students");
     } catch (error) {
       setIsLoading(false);
       toast.error(error.message, {
