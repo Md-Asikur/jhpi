@@ -4,6 +4,7 @@
   margin: 5px;
   height: 440px;
   position: relative;
+  
   .img {
     padding: 0.2rem;
     width: 100%;
@@ -100,15 +101,15 @@
 }
 @media(max-width:768px){
   .grid{
-     width: 25rem;
+     width: 31rem;
   // background-color: #fff;
   margin: 5px;
-  height: 400px;
+  height: 430px;
   position: relative;
   }
   .list{
     .img{
-      width: 150px;
+      width: 170px;
     }
   }
 }
