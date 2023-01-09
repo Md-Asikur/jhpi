@@ -23,7 +23,7 @@
 @tailwind utilities;
 @media(max-width:768px){
 .appp{
-  padding: 0px 2px;
+  padding: 0px 1px;
  
 }
 }
