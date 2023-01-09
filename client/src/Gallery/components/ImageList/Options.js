@@ -10,6 +10,7 @@ import deleteDocument from "../../firebase/deleteDocument";
 import deleteFile from "../../firebase/deleteFile";
 
 import { useValue } from "../../../context/ContextProvider";
+import { toast } from "react-toastify";
 
 export default function Options({ imageId, uid, imageURL }) {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -61,6 +62,18 @@ export default function Options({ imageId, uid, imageURL }) {
     //   });
       console.log(error);
     }
+  };
+  const loginMessage = () => {
+    toast.warning("🦄PLESE LOGIN AND CONTINUE!", {
+      position: "bottom-center",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+
+      theme: "dark",
+    });
   };
   return (
     <React.Fragment>
@@ -114,12 +127,21 @@ export default function Options({ imageId, uid, imageURL }) {
         transformOrigin={{ horizontal: "right", vertical: "top" }}
         anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
       >
-        <MenuItem onClick={handleDownload}>
-          <ListItemIcon>
-            <Download />
-          </ListItemIcon>
-          Download
-        </MenuItem>
+        {currentUser ? (
+          <MenuItem onClick={handleDownload}>
+            <ListItemIcon>
+              <Download />
+            </ListItemIcon>
+            Download
+          </MenuItem>
+        ) : (
+          <MenuItem onClick={loginMessage}>
+            <ListItemIcon>
+              <Download />
+            </ListItemIcon>
+            Download
+          </MenuItem>
+        )}
         {currentUser?.role === "admin" && (
           <MenuItem onClick={handleDelete}>
             <ListItemIcon>
@@ -128,14 +150,13 @@ export default function Options({ imageId, uid, imageURL }) {
             Delete
           </MenuItem>
         )}
-       
-          {/* <MenuItem onClick={handleDelete}>
+
+        {/* <MenuItem onClick={handleDelete}>
             <ListItemIcon>
               <Delete />
             </ListItemIcon>
             Delete
           </MenuItem> */}
-      
       </Menu>
     </React.Fragment>
   );
