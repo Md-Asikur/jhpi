@@ -23,12 +23,12 @@
 @tailwind utilities;
 @media(max-width:768px){
 .appp{
-  padding: 0px 1.5px;
+  padding: 0px 1.2px;
  
 }
 .showc{
-  margin: 0px 10px !important;
-  overflow-x: scroll;
+  margin: 0px 3px !important;
+  /* overflow-x: scroll; */
 }
 }
 

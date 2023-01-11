@@ -101,8 +101,8 @@ const HeroSection = () => {
               className="btn"
               style={{
                 backgroundColor: "#0a1930",
-                padding: "10px 40px",
-                borderRadius: "30px",
+                padding: "5px 30px",
+                borderRadius: "20px",
               }}
             >
               <a
@@ -110,6 +110,7 @@ const HeroSection = () => {
                 style={{
                   textDecoration: "none",
                   color: "white",
+                  fontSize:"1rem",
                 }}
               >
                 About Us

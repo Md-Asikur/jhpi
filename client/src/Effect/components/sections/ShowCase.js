@@ -26,7 +26,7 @@ const Section = styled.section`
     height: 100%;
     margin: 0px 0px 0px 0px;
 
-    background-color: ${(props) => props.theme.text};
+    background-color: ${(props) => props.theme.body};
   }
   & > *:first-child {
     animation-duration: 20s;

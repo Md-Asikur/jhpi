@@ -13,11 +13,16 @@ import img10 from "../assets/Nfts/principal.png";
 import TeamHoverEff from "./TeamHoverEff";
 import { Link } from "react-router-dom";
 const Section = styled.section`
-  min-height: 100vh;
-  width: 100vw;
+  height: 100vh;
+  width: 100%;
   position: relative;
   background-color: ${(props) => props.theme.body};
-  
+  overflow-x:hidden;
+  @media (max-width: 48em) {
+    height: 100%;
+ 
+    width: 100%;
+  }
 `;
 const Container = styled.div`
   width: 75%;

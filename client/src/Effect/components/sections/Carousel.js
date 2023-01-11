@@ -38,8 +38,8 @@ const Container = styled.div`
   }
   @media (max-width: 48em) {
     margin-top: 30px;
-    width: 55vh;
-    height: 50vw;
+    width: 45vh;
+    height: 60vw;
   }
   @media (max-width: 30em) {
     margin-top: 30px;
