@@ -7,7 +7,7 @@ import img4 from "../assests/images/ui-ux.png";
 export default function MultiActionAreaCard() {
   return (
     <>
-      <h1 className="evs">Special Events</h1>
+      
       <div class="wrapper">
         <div class="services">
           <a href="#">

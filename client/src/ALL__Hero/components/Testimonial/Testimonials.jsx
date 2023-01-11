@@ -129,8 +129,8 @@ const Testimonial = () => {
       }}
     >
       <div style={{ width: "90%", textAlign: "center" }}>
-        <h1 style={{ marginBottom: 20 }}>TESTIMONIALS</h1>
-        <h1 style={{ marginBottom: 20 }}>What Our Student Say!</h1>
+        <h1 style={{ marginBottom: 20 }}>OUR SUCCESSFULLY STUDENT</h1>
+      
         <Slider prevArrow={<PreviousBtn />} nextArrow={<NextBtn />} dots>
           <Card img="https://www.tutorialrepublic.com/examples/images/clients/1.jpg" />
           <Card img="https://www.tutorialrepublic.com/examples/images/clients/2.jpg" />

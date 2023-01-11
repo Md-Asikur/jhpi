@@ -1,3 +1,7 @@
+
+.timer-container{
+  margin-bottom: 10px;
+}
 .upcoming{
     text-align: center;
     font-size: 5rem;
@@ -11,6 +15,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 60vh;
 }
 .clock {
   position: relative;
@@ -21,10 +26,10 @@
   background: linear-gradient(270deg, #051817, #0e3839);
   height: 180px;
   width: 360px;
-  color: #06f1f6;
+  color: #065ca3;
   text-shadow: 1px 1px 7px;
   border-radius: 15px;
-  border: 2px solid rgb(253, 253, 253);
+  border: 2px solid rgba(253, 253, 253, 0.568);
   box-shadow: 0 0 5px 25px;
 }
 

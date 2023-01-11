@@ -18,17 +18,25 @@ import Timer from "../timer--sec/timer";
 import Events from "../EVENTS/Events";
 import Eventsa from "../EVENTS/Events";
 import MultiActionAreaCard from "../EVENTS/Events";
+import Carousel from "../../Effect/components/sections/Carousel";
+import Roadmap from "../../Effect/components/sections/Roadmap";
+import ShowCase from "../../Effect/components/sections/ShowCase";
+import Team from "../../Effect/components/sections/Team";
 
 const HomeHero = () => {
   return (
     <Fragment>
       {/* <Header /> */}
       <HeroSection />
+      {/* <Carousel /> */}
+      <Roadmap />
+      <ShowCase />
+      <Team/>
       <CompanySection />
-      <AboutUs />
+      {/* <AboutUs /> */}
       <Courses />
-      <ChooseUs />
-      <Teacher />
+      {/* <ChooseUs /> */}
+      {/* <Teacher /> */}
       <Timer />
       <MultiActionAreaCard/>
       {/* <Features /> */}

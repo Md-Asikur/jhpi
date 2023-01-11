@@ -43,7 +43,7 @@ const Courses = () => {
           <Col lg="12" md="12" sm="12" className="mb-5">
             <div className="course__top d-flex justify-content-between align-items-center">
               <div className="course__top__left w-100 pl-4">
-                <h2>Our Popular Courses</h2>
+                <h2 style={{ color: " #0a1930",textAlign:"center",fontSize:"2rem" }}>Our Popular Courses</h2>
                 <p>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae
                   consequatur libero quod voluptatibus ullam quia quas, vitae voluptatem
